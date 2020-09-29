@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.agrManader.dao.Interface.AgrproduceMapper">
+  <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Agrproduce">
+    <id column="produce_id" jdbcType="INTEGER" property="produceId" />
+    <result column="produce_name" jdbcType="VARCHAR" property="produceName" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="produce_addr" jdbcType="VARCHAR" property="produceAddr" />
+    <result column="produce_type" jdbcType="VARCHAR" property="produceType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    produce_id, produce_name, price, picture, num, produce_addr, produce_type
+  </sql>
+  <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.AgrproduceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from agrProduce
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from agrProduce
+    where produce_id = #{produceId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from agrProduce
+    where produce_id = #{produceId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.AgrproduceExample">
+    delete from agrProduce
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Agrproduce">
+    insert into agrProduce (produce_id, produce_name, price, 
+      picture, num, produce_addr, 
+      produce_type)
+    values (#{produceId,jdbcType=INTEGER}, #{produceName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{picture,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, #{produceAddr,jdbcType=VARCHAR}, 
+      #{produceType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Agrproduce">
+    insert into agrProduce
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        produce_id,
+      </if>
+      <if test="produceName != null">
+        produce_name,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="picture != null">
+        picture,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="produceAddr != null">
+        produce_addr,
+      </if>
+      <if test="produceType != null">
+        produce_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        #{produceId,jdbcType=INTEGER},
+      </if>
+      <if test="produceName != null">
+        #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="picture != null">
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="produceAddr != null">
+        #{produceAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="produceType != null">
+        #{produceType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.AgrproduceExample" resultType="java.lang.Long">
+    select count(*) from agrProduce
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update agrProduce
+    <set>
+      <if test="record.produceId != null">
+        produce_id = #{record.produceId,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceName != null">
+        produce_name = #{record.produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.picture != null">
+        picture = #{record.picture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceAddr != null">
+        produce_addr = #{record.produceAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceType != null">
+        produce_type = #{record.produceType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update agrProduce
+    set produce_id = #{record.produceId,jdbcType=INTEGER},
+      produce_name = #{record.produceName,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      picture = #{record.picture,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=INTEGER},
+      produce_addr = #{record.produceAddr,jdbcType=VARCHAR},
+      produce_type = #{record.produceType,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Agrproduce">
+    update agrProduce
+    <set>
+      <if test="produceName != null">
+        produce_name = #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="picture != null">
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="produceAddr != null">
+        produce_addr = #{produceAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="produceType != null">
+        produce_type = #{produceType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where produce_id = #{produceId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Agrproduce">
+    update agrProduce
+    set produce_name = #{produceName,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      picture = #{picture,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      produce_addr = #{produceAddr,jdbcType=VARCHAR},
+      produce_type = #{produceType,jdbcType=VARCHAR}
+    where produce_id = #{produceId,jdbcType=INTEGER}
+  </update>
+</mapper>

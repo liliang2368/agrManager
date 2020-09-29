@@ -3,7 +3,7 @@
 <generatorConfiguration>
 	<!-- 数据库驱动 -->
 	<!-- <classPathEntry location="/Users/guchuanlong/opt/jdbc-libs/ojdbc7-12.1.0.2.jar" /> -->
-	<classPathEntry location="/Users/a1234/.m2/repository/mysql/mysql-connector-java/5.1.34/mysql-connector-java-5.1.34.jar" />
+	<classPathEntry location="/System/Volumes/Data/Users/mac/maven/MavenRepository/MavenRepository/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar" />
 	<context id="context1" targetRuntime="MyBatis3">
 		<!--  <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
                 <property name="searchString" value="Example$"/>
@@ -16,7 +16,7 @@
 		</commentGenerator>
 
 <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://liyang/cnr-clouduser?useUnicode=true&amp;characterEncoding=UTF-8" 
+			connectionURL="jdbc:mysql://liyang/agr-manger?useUnicode=true&amp;characterEncoding=UTF-8"
 			userId="root" password="a">
 		</jdbcConnection>
 
@@ -35,7 +35,7 @@
 
 		<!-- java实体类配置 -->
 		<javaModelGenerator
-				targetPackage="com.example.demo.dao.bo"
+				targetPackage="com.ly.agrManader.dao.bo"
 				targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java" />
 
 		<!-- sqlMap映射xml配置 -->
@@ -44,7 +44,7 @@
 				targetProject="/Users/mac/IdeaProjects/agrManager/src/main/resources" />
 		<!-- mybatis接口类配置 -->
 		<javaClientGenerator
-				targetPackage="com.example.demo.dao.Interface"
+				targetPackage="com.ly.agrManader.dao.Interface"
 				targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java"
 				type="XMLMAPPER" />
 <!-- store_pay_dtl_rpt    store_purchase_rpt -->  

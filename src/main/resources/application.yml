@@ -11,6 +11,10 @@ logging:
 swagger:
   enabled: true
 spring:
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
   datasource:
     url: jdbc:mysql://112.124.13.227:3306/cnr-clouduser?useUnicode=true&characterEncoding=UTF-8
     username: root
@@ -61,7 +65,6 @@ spring:
       #listner负责ack，每调用一次，就立即commit
       ack-mode: manual_immediate
       missing-topics-fatal: false
-
 
 #eureka:
 #  client:

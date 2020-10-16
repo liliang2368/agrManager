@@ -16,7 +16,7 @@
 		</commentGenerator>
 
 <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://liyang/agr-manger?useUnicode=true&amp;characterEncoding=UTF-8"
+			connectionURL="jdbc:mysql://liyang/agr-procuce-manager?useUnicode=true&amp;characterEncoding=UTF-8"
 			userId="root" password="a">
 		</jdbcConnection>
 

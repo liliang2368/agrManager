@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @ComponentScan(basePackages="com.ly")
-@EnableSwagger2    //启用swaggerr 注解解析器
+@EnableSwagger2//启用swaggerr 注解解析器
 public class AppConfig_Swagger {
 	// 是否开启swagger，正式环境一般是需要关闭的，可根据springboot的多环境配置进行设置
 	@Value(value = "${swagger.enabled}")  //通过 @Value  获取配置信息

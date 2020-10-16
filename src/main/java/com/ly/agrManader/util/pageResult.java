@@ -15,7 +15,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
  * @author gucl
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-class PageResult<T> implements Serializable {
+public class pageResult<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * 是否业务成功

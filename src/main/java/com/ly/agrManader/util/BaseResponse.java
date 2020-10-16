@@ -99,7 +99,7 @@ public class BaseResponse<T> implements Serializable {
     }
 
     public void setResult(pageResult<Purchase> result) {
-        this.result = result;
+        this.result = (T) result;
     }
 
     public boolean isSuccess() {

@@ -14,6 +14,7 @@ public class BusinessConstants {
     public static final String BUSI_FAILURE_CODE = "999999";
     // 业务失败默认代码对应的信息
     public static final String BUSI_FAILURE_MESSAGE = "操作失败";
+    //业务状态
 
 }
 

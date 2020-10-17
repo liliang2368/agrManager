@@ -1,10 +1,9 @@
-package com.ly.agrManader.dao.bo;
-
-import org.apache.ibatis.annotations.Mapper;
+package com.ly.agrManader.web.api.marketing.request;
 
 import java.math.BigDecimal;
 
-public class Purchase {
+public class purchaseRequest {
+
     private Integer purchaseId;
 
     private String purchaseProduce;
@@ -84,4 +83,7 @@ public class Purchase {
     public void setQuaityState(Integer quaityState) {
         this.quaityState = quaityState;
     }
+
+
+
 }

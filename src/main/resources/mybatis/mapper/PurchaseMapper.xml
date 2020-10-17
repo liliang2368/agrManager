@@ -104,7 +104,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Purchase">
+  <insert id="insert"  parameterType="com.ly.agrManader.dao.bo.Purchase">
     insert into purchase (purchase_id, purchase_produce, purchase_produce_code, 
       purchase_state, purchase_produce_price, type_id, 
       supplier_id, quaity_state)

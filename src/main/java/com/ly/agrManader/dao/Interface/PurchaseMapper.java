@@ -3,6 +3,8 @@ package com.ly.agrManader.dao.Interface;
 import com.ly.agrManader.dao.bo.Purchase;
 import com.ly.agrManader.dao.bo.PurchaseExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 public interface PurchaseMapper {

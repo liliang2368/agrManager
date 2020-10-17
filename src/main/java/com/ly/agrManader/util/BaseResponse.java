@@ -60,6 +60,7 @@ public class BaseResponse<T> implements Serializable {
         this.resultMessage = resultMessage;
     }
 
+
     /**
      * 构造函数
      * @param success 是否成功

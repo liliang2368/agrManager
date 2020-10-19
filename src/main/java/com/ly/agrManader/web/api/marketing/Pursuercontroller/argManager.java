@@ -21,4 +21,9 @@ public class argManager {
     {
         return "food";
     }
+    @RequestMapping("supplier")
+    public String supplier( )
+    {
+        return "supplier";
+    }
 }

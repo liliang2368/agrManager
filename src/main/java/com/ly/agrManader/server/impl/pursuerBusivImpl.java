@@ -2,7 +2,6 @@ package com.ly.agrManader.server.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.ly.agrManader.dao.Interface.PurchaseMapper;
 import com.ly.agrManader.dao.bo.Purchase;
 import com.ly.agrManader.dao.bo.PurchaseExample;
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
@@ -31,9 +30,6 @@ public class pursuerBusivImpl implements IpursuerBusiv {
         BaseResponse<pageResult<pursuerVO>> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE,BusinessConstants.BUSI_SUCCESS_MESSAGE);
         pageResult<Purchase> pageResult = new pageResult<>();
         PageArg pageArg = request.getPage();
-        if (pageArg != null) {
-            PageHelper.startPage(pageArg.getPageNum(),pageArg.getPageSize());//需要转换一下格式
-        }
         PurchaseExample example =new PurchaseExample();
         PurchaseExample.Criteria criteria=example.createCriteria();
         //采购商品

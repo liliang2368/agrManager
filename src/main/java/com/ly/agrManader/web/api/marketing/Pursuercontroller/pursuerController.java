@@ -37,13 +37,13 @@ public class pursuerController {
         BaseResponse<pageResult<pursuerVO>> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
         try{
             //验证一下查询时间是否为空 CheckBillDetailDevelopRptRequest
-     //       CommValidate.validate();
+//            CommValidate.validate();
             return ipursuerBusiv.pageQueryPurchse(request);
         }catch (BusinessException | SystemException e) {
             response.setSuccess(false);
             response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);
             response.setResultMessage(BusinessConstants.BUSI_FAILURE_MESSAGE);
-            logger.error("StoreSaleDevelopRptController#saveStoreSaleDevelopRptByStoresCodes 发生业务或系统错误：{}" + e.getMessage(), e);
+            logger.error("pursuerController#pageQueryCheckBillDetailRpt 发生业务或系统错误：{}" + e.getMessage(), e);
         } catch (Exception e) {
             response.setSuccess(false);
             response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);

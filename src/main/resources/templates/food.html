@@ -145,20 +145,17 @@
         toolbar:'#tb'">   
     <thead>   
         <tr>   
-            <th data-options="field:'foodname',width:100">菜名</th> 
-            <th data-options="field:'dec',width:100">描述</th>   
-            <th data-options="field:'oldprice',width:100">价格</th>
-            <th data-options="field:'newprice',width:100">特价</th>     
-            <th data-options="field:'pic',width:100,formatter:fmtPic">商品图</th>
-            <th data-options="field:'head1',width:100,formatter:fmtPic">详情图</th> 
-            <th data-options="field:'head2',width:100,formatter:fmtPic">详情图</th> 
-            <th data-options="field:'head3',width:100,formatter:fmtPic">详情图</th> 
-            <th data-options="field:'head4',width:100,formatter:fmtPic">详情图</th>   
-            <th data-options="field:'head',width:100,formatter:fmtPic">详情图</th>
-            <th data-options="field:'createtime',width:100">创建时间</th>   
-            <th data-options="field:'num',width:100">库存量</th>   
-             <th data-options="field:'type',width:100">菜品分类</th>  
-        </tr>   
+            <th data-options="field:'foodname',width:100">采购主键</th>
+            <th data-options="field:'dec',width:100">采购产品名称</th>
+            <th data-options="field:'oldprice',width:100">采购产品编码</th>
+            <th data-options="field:'newprice',width:100">采购状态</th>
+            <th data-options="field:'pic',width:100,formatter:fmtPic">采购产品价格</th>
+            <th data-options="field:'head1',width:100,formatter:fmtPic">采购类型</th>
+            <th data-options="field:'head2',width:100,formatter:fmtPic">供货商</th>
+            <th data-options="field:'head3',width:100,formatter:fmtPic">质量检测状态</th>
+            <th data-options="field:'createtime',width:100">采购数量</th>
+            <th data-options="field:'num',width:100">创建时间</th>
+        </tr>
     </thead>   
 </table>
 <div id="dlg" class="easyui-dialog" title="" style="菜品编辑width:400px;height:600px;padding:10px"
@@ -196,23 +193,46 @@
 		<div id="tb" style="padding:5px;height:auto">
 		<div style="margin-bottom:5px">
 			&nbsp&nbsp&nbsp&nbsp
-			采购产品: <input class="easyui-textbox"  id="1" style="width:80px">
+			采购产品: <input class="easyui-textbox"  id="1" style="width:120px">
 			&nbsp&nbsp&nbsp&nbsp
-			采购状态: <input class="easyui-textbox"  id="2" style="width:80px">
+			采购状态: <select class="easyui-combobox" panelHeight="auto" style="width:160px" id="purchaseStatus">
+			<option value="1">未审批</option>
+			<option value="2">财务审批完成</option>
+			<option value="3">总经理审批完成</option>
+			<option value="4">审批完成</option>
+		</select>
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-			供货商项: <input class="easyui-textbox"  id="5" style="width:80px">
+			供货商项: <select class="easyui-combobox" panelHeight="auto" style="width:160px" id="provivid">
+			<option value="1">供货商1</option>
+			<option value="2">供货商2</option>
+			<option value="3">供货商3</option>
+			<option value="4">供货商4</option>
+		</select>
 		</div>
 			<div style="margin-bottom:5px">
 				&nbsp&nbsp&nbsp&nbsp
-				预付款项: <input class="easyui-textbox"  id="6" style="width:80px">
+				预付款项: <select class="easyui-combobox" panelHeight="auto" style="width:160px" id="9">
+				<option value="1">未审批</option>
+				<option value="2">财务审批完成</option>
+				<option value="3">总经理审批完成</option>
+				<option value="4">审批完成</option>
+			</select>
 				&nbsp&nbsp&nbsp&nbsp
-				质检状态: <input class="easyui-textbox"  id="7" style="width:80px">
+				质检状态: <select class="easyui-combobox" panelHeight="auto" style="width:160px" id="10">
+				<option value="1">未审批</option>
+				<option value="2">财务审批完成</option>
+				<option value="3">总经理审批完成</option>
+				<option value="4">审批完成</option>
+			</select>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-				商品类型: <input class="easyui-textbox"  id="8" style="width:80px">
+				商品类型: <select class="easyui-combobox" panelHeight="auto" style="width:160px" id="11">
+				<option value="1">未审批</option>
+				<option value="2">财务审批完成</option>
+				<option value="3">总经理审批完成</option>
+				<option value="4">审批完成</option>
+			</select>
 
 			</div>
 

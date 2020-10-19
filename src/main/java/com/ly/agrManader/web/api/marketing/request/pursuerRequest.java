@@ -28,7 +28,6 @@ public class pursuerRequest {
     @ApiModelProperty(value = "是否质检", name = "supplierId")
     private Integer quaityState;
 
-
     private PageArg page;
 
     public PageArg getPage() {

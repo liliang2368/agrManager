@@ -1,7 +1,5 @@
 package com.ly.agrManader.dao.bo;
 
-import org.apache.ibatis.annotations.Mapper;
-
 import java.math.BigDecimal;
 
 public class Purchase {

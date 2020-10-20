@@ -2,7 +2,6 @@ package com.ly.agrManader.util;
 
 import java.io.Serializable;
 
-import com.ly.agrManader.dao.bo.Purchase;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**

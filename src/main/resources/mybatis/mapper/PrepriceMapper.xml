@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.agrManader.dao.Interface.PrepriceMapper">
+  <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Preprice">
+    <id column="preProductId" jdbcType="INTEGER" property="preproductid" />
+    <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
+    <result column="tradePrice" jdbcType="DOUBLE" property="tradeprice" />
+    <result column="wholesalerName" jdbcType="VARCHAR" property="wholesalername" />
+    <result column="marketPrice" jdbcType="DECIMAL" property="marketprice" />
+    <result column="marketName" jdbcType="VARCHAR" property="marketname" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="inputTime" jdbcType="TIMESTAMP" property="inputtime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    preProductId, measurementMethod, tradePrice, wholesalerName, marketPrice, marketName, 
+    time, inputTime
+  </sql>
+  <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.PrepriceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from prePrice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from prePrice
+    where preProductId = #{preproductid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from prePrice
+    where preProductId = #{preproductid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.PrepriceExample">
+    delete from prePrice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Preprice">
+    insert into prePrice (preProductId, measurementMethod, 
+      tradePrice, wholesalerName, marketPrice, 
+      marketName, time, inputTime
+      )
+    values (#{preproductid,jdbcType=INTEGER}, #{measurementmethod,jdbcType=VARCHAR}, 
+      #{tradeprice,jdbcType=DOUBLE}, #{wholesalername,jdbcType=VARCHAR}, #{marketprice,jdbcType=DECIMAL}, 
+      #{marketname,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{inputtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Preprice">
+    insert into prePrice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="preproductid != null">
+        preProductId,
+      </if>
+      <if test="measurementmethod != null">
+        measurementMethod,
+      </if>
+      <if test="tradeprice != null">
+        tradePrice,
+      </if>
+      <if test="wholesalername != null">
+        wholesalerName,
+      </if>
+      <if test="marketprice != null">
+        marketPrice,
+      </if>
+      <if test="marketname != null">
+        marketName,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="inputtime != null">
+        inputTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="preproductid != null">
+        #{preproductid,jdbcType=INTEGER},
+      </if>
+      <if test="measurementmethod != null">
+        #{measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeprice != null">
+        #{tradeprice,jdbcType=DOUBLE},
+      </if>
+      <if test="wholesalername != null">
+        #{wholesalername,jdbcType=VARCHAR},
+      </if>
+      <if test="marketprice != null">
+        #{marketprice,jdbcType=DECIMAL},
+      </if>
+      <if test="marketname != null">
+        #{marketname,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputtime != null">
+        #{inputtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.PrepriceExample" resultType="java.lang.Long">
+    select count(*) from prePrice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update prePrice
+    <set>
+      <if test="record.preproductid != null">
+        preProductId = #{record.preproductid,jdbcType=INTEGER},
+      </if>
+      <if test="record.measurementmethod != null">
+        measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeprice != null">
+        tradePrice = #{record.tradeprice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.wholesalername != null">
+        wholesalerName = #{record.wholesalername,jdbcType=VARCHAR},
+      </if>
+      <if test="record.marketprice != null">
+        marketPrice = #{record.marketprice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.marketname != null">
+        marketName = #{record.marketname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null">
+        time = #{record.time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.inputtime != null">
+        inputTime = #{record.inputtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update prePrice
+    set preProductId = #{record.preproductid,jdbcType=INTEGER},
+      measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
+      tradePrice = #{record.tradeprice,jdbcType=DOUBLE},
+      wholesalerName = #{record.wholesalername,jdbcType=VARCHAR},
+      marketPrice = #{record.marketprice,jdbcType=DECIMAL},
+      marketName = #{record.marketname,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=TIMESTAMP},
+      inputTime = #{record.inputtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Preprice">
+    update prePrice
+    <set>
+      <if test="measurementmethod != null">
+        measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeprice != null">
+        tradePrice = #{tradeprice,jdbcType=DOUBLE},
+      </if>
+      <if test="wholesalername != null">
+        wholesalerName = #{wholesalername,jdbcType=VARCHAR},
+      </if>
+      <if test="marketprice != null">
+        marketPrice = #{marketprice,jdbcType=DECIMAL},
+      </if>
+      <if test="marketname != null">
+        marketName = #{marketname,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputtime != null">
+        inputTime = #{inputtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where preProductId = #{preproductid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Preprice">
+    update prePrice
+    set measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+      tradePrice = #{tradeprice,jdbcType=DOUBLE},
+      wholesalerName = #{wholesalername,jdbcType=VARCHAR},
+      marketPrice = #{marketprice,jdbcType=DECIMAL},
+      marketName = #{marketname,jdbcType=VARCHAR},
+      time = #{time,jdbcType=TIMESTAMP},
+      inputTime = #{inputtime,jdbcType=TIMESTAMP}
+    where preProductId = #{preproductid,jdbcType=INTEGER}
+  </update>
+</mapper>

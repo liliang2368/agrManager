@@ -2,8 +2,6 @@ package com.ly.agrManader.server.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.ly.agrManader.dao.bo.Purchase;
-import com.ly.agrManader.dao.bo.PurchaseExample;
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.*;
 import com.ly.agrManader.web.api.marketing.request.pursuerRequest;

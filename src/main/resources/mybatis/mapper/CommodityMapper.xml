@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.agrManader.dao.Interface.CommodityMapper">
+  <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Commodity">
+    <id column="commodityId" jdbcType="INTEGER" property="commodityid" />
+    <result column="agriculturalProductsId" jdbcType="INTEGER" property="agriculturalproductsid" />
+    <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
+    <result column="storageMethod" jdbcType="VARCHAR" property="storagemethod" />
+    <result column="qualityGuaranteePeriod" jdbcType="VARCHAR" property="qualityguaranteeperiod" />
+    <result column="minStock" jdbcType="VARCHAR" property="minstock" />
+    <result column="stock" jdbcType="VARCHAR" property="stock" />
+    <result column="maxStock" jdbcType="VARCHAR" property="maxstock" />
+    <result column="recommendStock" jdbcType="VARCHAR" property="recommendstock" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="Grade" jdbcType="VARCHAR" property="grade" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    commodityId, agriculturalProductsId, measurementMethod, storageMethod, qualityGuaranteePeriod, 
+    minStock, stock, maxStock, recommendStock, price, Grade
+  </sql>
+  <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from commodity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from commodity
+    where commodityId = #{commodityid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from commodity
+    where commodityId = #{commodityid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample">
+    delete from commodity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Commodity">
+    insert into commodity (commodityId, agriculturalProductsId, 
+      measurementMethod, storageMethod, qualityGuaranteePeriod, 
+      minStock, stock, maxStock, 
+      recommendStock, price, Grade
+      )
+    values (#{commodityid,jdbcType=INTEGER}, #{agriculturalproductsid,jdbcType=INTEGER}, 
+      #{measurementmethod,jdbcType=VARCHAR}, #{storagemethod,jdbcType=VARCHAR}, #{qualityguaranteeperiod,jdbcType=VARCHAR}, 
+      #{minstock,jdbcType=VARCHAR}, #{stock,jdbcType=VARCHAR}, #{maxstock,jdbcType=VARCHAR}, 
+      #{recommendstock,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{grade,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Commodity">
+    insert into commodity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commodityid != null">
+        commodityId,
+      </if>
+      <if test="agriculturalproductsid != null">
+        agriculturalProductsId,
+      </if>
+      <if test="measurementmethod != null">
+        measurementMethod,
+      </if>
+      <if test="storagemethod != null">
+        storageMethod,
+      </if>
+      <if test="qualityguaranteeperiod != null">
+        qualityGuaranteePeriod,
+      </if>
+      <if test="minstock != null">
+        minStock,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+      <if test="maxstock != null">
+        maxStock,
+      </if>
+      <if test="recommendstock != null">
+        recommendStock,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="grade != null">
+        Grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commodityid != null">
+        #{commodityid,jdbcType=INTEGER},
+      </if>
+      <if test="agriculturalproductsid != null">
+        #{agriculturalproductsid,jdbcType=INTEGER},
+      </if>
+      <if test="measurementmethod != null">
+        #{measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="storagemethod != null">
+        #{storagemethod,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityguaranteeperiod != null">
+        #{qualityguaranteeperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="minstock != null">
+        #{minstock,jdbcType=VARCHAR},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=VARCHAR},
+      </if>
+      <if test="maxstock != null">
+        #{maxstock,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendstock != null">
+        #{recommendstock,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample" resultType="java.lang.Long">
+    select count(*) from commodity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update commodity
+    <set>
+      <if test="record.commodityid != null">
+        commodityId = #{record.commodityid,jdbcType=INTEGER},
+      </if>
+      <if test="record.agriculturalproductsid != null">
+        agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
+      </if>
+      <if test="record.measurementmethod != null">
+        measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storagemethod != null">
+        storageMethod = #{record.storagemethod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qualityguaranteeperiod != null">
+        qualityGuaranteePeriod = #{record.qualityguaranteeperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.minstock != null">
+        minStock = #{record.minstock,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stock != null">
+        stock = #{record.stock,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maxstock != null">
+        maxStock = #{record.maxstock,jdbcType=VARCHAR},
+      </if>
+      <if test="record.recommendstock != null">
+        recommendStock = #{record.recommendstock,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.grade != null">
+        Grade = #{record.grade,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update commodity
+    set commodityId = #{record.commodityid,jdbcType=INTEGER},
+      agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
+      measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
+      storageMethod = #{record.storagemethod,jdbcType=VARCHAR},
+      qualityGuaranteePeriod = #{record.qualityguaranteeperiod,jdbcType=VARCHAR},
+      minStock = #{record.minstock,jdbcType=VARCHAR},
+      stock = #{record.stock,jdbcType=VARCHAR},
+      maxStock = #{record.maxstock,jdbcType=VARCHAR},
+      recommendStock = #{record.recommendstock,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      Grade = #{record.grade,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Commodity">
+    update commodity
+    <set>
+      <if test="agriculturalproductsid != null">
+        agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
+      </if>
+      <if test="measurementmethod != null">
+        measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+      </if>
+      <if test="storagemethod != null">
+        storageMethod = #{storagemethod,jdbcType=VARCHAR},
+      </if>
+      <if test="qualityguaranteeperiod != null">
+        qualityGuaranteePeriod = #{qualityguaranteeperiod,jdbcType=VARCHAR},
+      </if>
+      <if test="minstock != null">
+        minStock = #{minstock,jdbcType=VARCHAR},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=VARCHAR},
+      </if>
+      <if test="maxstock != null">
+        maxStock = #{maxstock,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendstock != null">
+        recommendStock = #{recommendstock,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        Grade = #{grade,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where commodityId = #{commodityid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Commodity">
+    update commodity
+    set agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
+      measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+      storageMethod = #{storagemethod,jdbcType=VARCHAR},
+      qualityGuaranteePeriod = #{qualityguaranteeperiod,jdbcType=VARCHAR},
+      minStock = #{minstock,jdbcType=VARCHAR},
+      stock = #{stock,jdbcType=VARCHAR},
+      maxStock = #{maxstock,jdbcType=VARCHAR},
+      recommendStock = #{recommendstock,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      Grade = #{grade,jdbcType=VARCHAR}
+    where commodityId = #{commodityid,jdbcType=INTEGER}
+  </update>
+</mapper>

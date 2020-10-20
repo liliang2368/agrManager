@@ -47,53 +47,8 @@
 				targetPackage="com.ly.agrManader.dao.Interface"
 				targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java"
 				type="XMLMAPPER" />
-<!-- store_pay_dtl_rpt    store_purchase_rpt -->  
 		  <table tableName="%" enableCountByExample="true"
                   enableUpdateByExample="true" enableDeleteByExample="true"
                   enableSelectByExample="true" selectByExampleQueryId="false" />
-         <!-- <table tableName="MEM_BASE_HOBBY" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_THRID_LOGIN" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_ADDRESS" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_CARD" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_COU" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_HOBBY" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_INFO" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="MEM_USER_PRD" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="PRD_BASE_INFO" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="PRD_CATEGORY" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="PRD_COU_REL" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="PRD_FESTIVAL_GREETING" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="STORE_BASE_INFO" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-          <table tableName="SYS_RANDOM_REC" enableCountByExample="true"
-          <table tableName="MEM_USER_COU" enableCountByExample="true"
-                  enableUpdateByExample="true" enableDeleteByExample="true"
-                  enableSelectByExample="true" selectByExampleQueryId="false" />
-                  -->
 	</context>
 </generatorConfiguration>

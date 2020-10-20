@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.agrManader.dao.Interface.OrderdetailsMapper">
+  <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Orderdetails">
+    <id column="detailsId" jdbcType="INTEGER" property="detailsid" />
+    <result column="contractId" jdbcType="INTEGER" property="contractid" />
+    <result column="product" jdbcType="VARCHAR" property="product" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="unitPrice" jdbcType="DOUBLE" property="unitprice" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    detailsId, contractId, product, number, unitPrice
+  </sql>
+  <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.OrderdetailsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from orderDetails
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orderDetails
+    where detailsId = #{detailsid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orderDetails
+    where detailsId = #{detailsid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.OrderdetailsExample">
+    delete from orderDetails
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
+    insert into orderDetails (detailsId, contractId, product, 
+      number, unitPrice)
+    values (#{detailsid,jdbcType=INTEGER}, #{contractid,jdbcType=INTEGER}, #{product,jdbcType=VARCHAR}, 
+      #{number,jdbcType=INTEGER}, #{unitprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
+    insert into orderDetails
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="detailsid != null">
+        detailsId,
+      </if>
+      <if test="contractid != null">
+        contractId,
+      </if>
+      <if test="product != null">
+        product,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="unitprice != null">
+        unitPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="detailsid != null">
+        #{detailsid,jdbcType=INTEGER},
+      </if>
+      <if test="contractid != null">
+        #{contractid,jdbcType=INTEGER},
+      </if>
+      <if test="product != null">
+        #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null">
+        #{unitprice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.OrderdetailsExample" resultType="java.lang.Long">
+    select count(*) from orderDetails
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update orderDetails
+    <set>
+      <if test="record.detailsid != null">
+        detailsId = #{record.detailsid,jdbcType=INTEGER},
+      </if>
+      <if test="record.contractid != null">
+        contractId = #{record.contractid,jdbcType=INTEGER},
+      </if>
+      <if test="record.product != null">
+        product = #{record.product,jdbcType=VARCHAR},
+      </if>
+      <if test="record.number != null">
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
+      <if test="record.unitprice != null">
+        unitPrice = #{record.unitprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update orderDetails
+    set detailsId = #{record.detailsid,jdbcType=INTEGER},
+      contractId = #{record.contractid,jdbcType=INTEGER},
+      product = #{record.product,jdbcType=VARCHAR},
+      number = #{record.number,jdbcType=INTEGER},
+      unitPrice = #{record.unitprice,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
+    update orderDetails
+    <set>
+      <if test="contractid != null">
+        contractId = #{contractid,jdbcType=INTEGER},
+      </if>
+      <if test="product != null">
+        product = #{product,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null">
+        unitPrice = #{unitprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where detailsId = #{detailsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
+    update orderDetails
+    set contractId = #{contractid,jdbcType=INTEGER},
+      product = #{product,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER},
+      unitPrice = #{unitprice,jdbcType=DOUBLE}
+    where detailsId = #{detailsid,jdbcType=INTEGER}
+  </update>
+</mapper>

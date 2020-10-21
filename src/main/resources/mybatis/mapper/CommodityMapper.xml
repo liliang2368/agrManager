@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Commodity">
     <id column="commodityId" jdbcType="INTEGER" property="commodityid" />
     <result column="agriculturalProductsId" jdbcType="INTEGER" property="agriculturalproductsid" />
+    <result column="commodityName" jdbcType="VARCHAR" property="commodityname" />
     <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
     <result column="storageMethod" jdbcType="VARCHAR" property="storagemethod" />
     <result column="qualityGuaranteePeriod" jdbcType="INTEGER" property="qualityguaranteeperiod" />
@@ -12,7 +13,7 @@
     <result column="maxStock" jdbcType="INTEGER" property="maxstock" />
     <result column="recommendStock" jdbcType="INTEGER" property="recommendstock" />
     <result column="price" jdbcType="DOUBLE" property="price" />
-    <result column="Grade" jdbcType="INTEGER" property="grade" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -73,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    commodityId, agriculturalProductsId, measurementMethod, storageMethod, qualityGuaranteePeriod, 
-    minStock, stock, maxStock, recommendStock, price, Grade
+    commodityId, agriculturalProductsId, commodityName, measurementMethod, storageMethod, 
+    qualityGuaranteePeriod, minStock, stock, maxStock, recommendStock, price, grade
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample" resultMap="BaseResultMap">
     select
@@ -109,15 +110,15 @@
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Commodity">
     insert into commodity (commodityId, agriculturalProductsId, 
-      measurementMethod, storageMethod, qualityGuaranteePeriod, 
-      minStock, stock, maxStock, 
-      recommendStock, price, Grade
-      )
+      commodityName, measurementMethod, storageMethod, 
+      qualityGuaranteePeriod, minStock, stock, 
+      maxStock, recommendStock, price, 
+      grade)
     values (#{commodityid,jdbcType=INTEGER}, #{agriculturalproductsid,jdbcType=INTEGER}, 
-      #{measurementmethod,jdbcType=VARCHAR}, #{storagemethod,jdbcType=VARCHAR}, #{qualityguaranteeperiod,jdbcType=INTEGER}, 
-      #{minstock,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, #{maxstock,jdbcType=INTEGER}, 
-      #{recommendstock,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, #{grade,jdbcType=INTEGER}
-      )
+      #{commodityname,jdbcType=VARCHAR}, #{measurementmethod,jdbcType=VARCHAR}, #{storagemethod,jdbcType=VARCHAR}, 
+      #{qualityguaranteeperiod,jdbcType=INTEGER}, #{minstock,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, 
+      #{maxstock,jdbcType=INTEGER}, #{recommendstock,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, 
+      #{grade,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Commodity">
     insert into commodity
@@ -127,6 +128,9 @@
       </if>
       <if test="agriculturalproductsid != null">
         agriculturalProductsId,
+      </if>
+      <if test="commodityname != null">
+        commodityName,
       </if>
       <if test="measurementmethod != null">
         measurementMethod,
@@ -153,7 +157,7 @@
         price,
       </if>
       <if test="grade != null">
-        Grade,
+        grade,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -162,6 +166,9 @@
       </if>
       <if test="agriculturalproductsid != null">
         #{agriculturalproductsid,jdbcType=INTEGER},
+      </if>
+      <if test="commodityname != null">
+        #{commodityname,jdbcType=VARCHAR},
       </if>
       <if test="measurementmethod != null">
         #{measurementmethod,jdbcType=VARCHAR},
@@ -207,6 +214,9 @@
       <if test="record.agriculturalproductsid != null">
         agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
       </if>
+      <if test="record.commodityname != null">
+        commodityName = #{record.commodityname,jdbcType=VARCHAR},
+      </if>
       <if test="record.measurementmethod != null">
         measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
       </if>
@@ -232,7 +242,7 @@
         price = #{record.price,jdbcType=DOUBLE},
       </if>
       <if test="record.grade != null">
-        Grade = #{record.grade,jdbcType=INTEGER},
+        grade = #{record.grade,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -243,6 +253,7 @@
     update commodity
     set commodityId = #{record.commodityid,jdbcType=INTEGER},
       agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
+      commodityName = #{record.commodityname,jdbcType=VARCHAR},
       measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
       storageMethod = #{record.storagemethod,jdbcType=VARCHAR},
       qualityGuaranteePeriod = #{record.qualityguaranteeperiod,jdbcType=INTEGER},
@@ -251,7 +262,7 @@
       maxStock = #{record.maxstock,jdbcType=INTEGER},
       recommendStock = #{record.recommendstock,jdbcType=INTEGER},
       price = #{record.price,jdbcType=DOUBLE},
-      Grade = #{record.grade,jdbcType=INTEGER}
+      grade = #{record.grade,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -261,6 +272,9 @@
     <set>
       <if test="agriculturalproductsid != null">
         agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
+      </if>
+      <if test="commodityname != null">
+        commodityName = #{commodityname,jdbcType=VARCHAR},
       </if>
       <if test="measurementmethod != null">
         measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
@@ -287,7 +301,7 @@
         price = #{price,jdbcType=DOUBLE},
       </if>
       <if test="grade != null">
-        Grade = #{grade,jdbcType=INTEGER},
+        grade = #{grade,jdbcType=INTEGER},
       </if>
     </set>
     where commodityId = #{commodityid,jdbcType=INTEGER}
@@ -295,6 +309,7 @@
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Commodity">
     update commodity
     set agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
+      commodityName = #{commodityname,jdbcType=VARCHAR},
       measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
       storageMethod = #{storagemethod,jdbcType=VARCHAR},
       qualityGuaranteePeriod = #{qualityguaranteeperiod,jdbcType=INTEGER},
@@ -303,7 +318,7 @@
       maxStock = #{maxstock,jdbcType=INTEGER},
       recommendStock = #{recommendstock,jdbcType=INTEGER},
       price = #{price,jdbcType=DOUBLE},
-      Grade = #{grade,jdbcType=INTEGER}
+      grade = #{grade,jdbcType=INTEGER}
     where commodityId = #{commodityid,jdbcType=INTEGER}
   </update>
 </mapper>

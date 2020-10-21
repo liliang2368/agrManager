@@ -1,11 +1,21 @@
 package com.ly.agrManader.dao.bo;
 
-public class Orderdetails extends OrderdetailsKey {
+public class Orderdetails {
+    private Integer detailsid;
+
     private Integer contractid;
 
     private Integer product;
 
-    private Double unitprice;
+    private Integer number;
+
+    public Integer getDetailsid() {
+        return detailsid;
+    }
+
+    public void setDetailsid(Integer detailsid) {
+        this.detailsid = detailsid;
+    }
 
     public Integer getContractid() {
         return contractid;
@@ -23,11 +33,11 @@ public class Orderdetails extends OrderdetailsKey {
         this.product = product;
     }
 
-    public Double getUnitprice() {
-        return unitprice;
+    public Integer getNumber() {
+        return number;
     }
 
-    public void setUnitprice(Double unitprice) {
-        this.unitprice = unitprice;
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

@@ -164,66 +164,6 @@ public class OrderdetailsExample {
             return (Criteria) this;
         }
 
-        public Criteria andNumberIsNull() {
-            addCriterion("number is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberIsNotNull() {
-            addCriterion("number is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberEqualTo(Integer value) {
-            addCriterion("number =", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotEqualTo(Integer value) {
-            addCriterion("number <>", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberGreaterThan(Integer value) {
-            addCriterion("number >", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberGreaterThanOrEqualTo(Integer value) {
-            addCriterion("number >=", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberLessThan(Integer value) {
-            addCriterion("number <", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberLessThanOrEqualTo(Integer value) {
-            addCriterion("number <=", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberIn(List<Integer> values) {
-            addCriterion("number in", values, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotIn(List<Integer> values) {
-            addCriterion("number not in", values, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberBetween(Integer value1, Integer value2) {
-            addCriterion("number between", value1, value2, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotBetween(Integer value1, Integer value2) {
-            addCriterion("number not between", value1, value2, "number");
-            return (Criteria) this;
-        }
-
         public Criteria andContractidIsNull() {
             addCriterion("contractId is null");
             return (Criteria) this;
@@ -344,63 +284,63 @@ public class OrderdetailsExample {
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceIsNull() {
-            addCriterion("unitPrice is null");
+        public Criteria andNumberIsNull() {
+            addCriterion("number is null");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceIsNotNull() {
-            addCriterion("unitPrice is not null");
+        public Criteria andNumberIsNotNull() {
+            addCriterion("number is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceEqualTo(Double value) {
-            addCriterion("unitPrice =", value, "unitprice");
+        public Criteria andNumberEqualTo(Integer value) {
+            addCriterion("number =", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceNotEqualTo(Double value) {
-            addCriterion("unitPrice <>", value, "unitprice");
+        public Criteria andNumberNotEqualTo(Integer value) {
+            addCriterion("number <>", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceGreaterThan(Double value) {
-            addCriterion("unitPrice >", value, "unitprice");
+        public Criteria andNumberGreaterThan(Integer value) {
+            addCriterion("number >", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceGreaterThanOrEqualTo(Double value) {
-            addCriterion("unitPrice >=", value, "unitprice");
+        public Criteria andNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("number >=", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceLessThan(Double value) {
-            addCriterion("unitPrice <", value, "unitprice");
+        public Criteria andNumberLessThan(Integer value) {
+            addCriterion("number <", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceLessThanOrEqualTo(Double value) {
-            addCriterion("unitPrice <=", value, "unitprice");
+        public Criteria andNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("number <=", value, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceIn(List<Double> values) {
-            addCriterion("unitPrice in", values, "unitprice");
+        public Criteria andNumberIn(List<Integer> values) {
+            addCriterion("number in", values, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceNotIn(List<Double> values) {
-            addCriterion("unitPrice not in", values, "unitprice");
+        public Criteria andNumberNotIn(List<Integer> values) {
+            addCriterion("number not in", values, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceBetween(Double value1, Double value2) {
-            addCriterion("unitPrice between", value1, value2, "unitprice");
+        public Criteria andNumberBetween(Integer value1, Integer value2) {
+            addCriterion("number between", value1, value2, "number");
             return (Criteria) this;
         }
 
-        public Criteria andUnitpriceNotBetween(Double value1, Double value2) {
-            addCriterion("unitPrice not between", value1, value2, "unitprice");
+        public Criteria andNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("number not between", value1, value2, "number");
             return (Criteria) this;
         }
     }

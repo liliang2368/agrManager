@@ -5,6 +5,8 @@ public class Commodity {
 
     private Integer agriculturalproductsid;
 
+    private String commodityname;
+
     private String measurementmethod;
 
     private String storagemethod;
@@ -37,6 +39,14 @@ public class Commodity {
 
     public void setAgriculturalproductsid(Integer agriculturalproductsid) {
         this.agriculturalproductsid = agriculturalproductsid;
+    }
+
+    public String getCommodityname() {
+        return commodityname;
+    }
+
+    public void setCommodityname(String commodityname) {
+        this.commodityname = commodityname;
     }
 
     public String getMeasurementmethod() {

@@ -224,6 +224,76 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
+        public Criteria andCommoditynameIsNull() {
+            addCriterion("commodityName is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameIsNotNull() {
+            addCriterion("commodityName is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameEqualTo(String value) {
+            addCriterion("commodityName =", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameNotEqualTo(String value) {
+            addCriterion("commodityName <>", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameGreaterThan(String value) {
+            addCriterion("commodityName >", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameGreaterThanOrEqualTo(String value) {
+            addCriterion("commodityName >=", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameLessThan(String value) {
+            addCriterion("commodityName <", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameLessThanOrEqualTo(String value) {
+            addCriterion("commodityName <=", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameLike(String value) {
+            addCriterion("commodityName like", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameNotLike(String value) {
+            addCriterion("commodityName not like", value, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameIn(List<String> values) {
+            addCriterion("commodityName in", values, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameNotIn(List<String> values) {
+            addCriterion("commodityName not in", values, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameBetween(String value1, String value2) {
+            addCriterion("commodityName between", value1, value2, "commodityname");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommoditynameNotBetween(String value1, String value2) {
+            addCriterion("commodityName not between", value1, value2, "commodityname");
+            return (Criteria) this;
+        }
+
         public Criteria andMeasurementmethodIsNull() {
             addCriterion("measurementMethod is null");
             return (Criteria) this;
@@ -725,62 +795,62 @@ public class CommodityExample {
         }
 
         public Criteria andGradeIsNull() {
-            addCriterion("Grade is null");
+            addCriterion("grade is null");
             return (Criteria) this;
         }
 
         public Criteria andGradeIsNotNull() {
-            addCriterion("Grade is not null");
+            addCriterion("grade is not null");
             return (Criteria) this;
         }
 
         public Criteria andGradeEqualTo(Integer value) {
-            addCriterion("Grade =", value, "grade");
+            addCriterion("grade =", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeNotEqualTo(Integer value) {
-            addCriterion("Grade <>", value, "grade");
+            addCriterion("grade <>", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeGreaterThan(Integer value) {
-            addCriterion("Grade >", value, "grade");
+            addCriterion("grade >", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("Grade >=", value, "grade");
+            addCriterion("grade >=", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeLessThan(Integer value) {
-            addCriterion("Grade <", value, "grade");
+            addCriterion("grade <", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeLessThanOrEqualTo(Integer value) {
-            addCriterion("Grade <=", value, "grade");
+            addCriterion("grade <=", value, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeIn(List<Integer> values) {
-            addCriterion("Grade in", values, "grade");
+            addCriterion("grade in", values, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeNotIn(List<Integer> values) {
-            addCriterion("Grade not in", values, "grade");
+            addCriterion("grade not in", values, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeBetween(Integer value1, Integer value2) {
-            addCriterion("Grade between", value1, value2, "grade");
+            addCriterion("grade between", value1, value2, "grade");
             return (Criteria) this;
         }
 
         public Criteria andGradeNotBetween(Integer value1, Integer value2) {
-            addCriterion("Grade not between", value1, value2, "grade");
+            addCriterion("grade not between", value1, value2, "grade");
             return (Criteria) this;
         }
     }

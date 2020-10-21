@@ -2,6 +2,7 @@ package com.ly.agrManader.dao.Interface;
 
 import com.ly.agrManader.dao.bo.Orderdetails;
 import com.ly.agrManader.dao.bo.OrderdetailsExample;
+import com.ly.agrManader.dao.bo.OrderdetailsKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -10,7 +11,7 @@ public interface OrderdetailsMapper {
 
     int deleteByExample(OrderdetailsExample example);
 
-    int deleteByPrimaryKey(Integer detailsid);
+    int deleteByPrimaryKey(OrderdetailsKey key);
 
     int insert(Orderdetails record);
 
@@ -18,7 +19,7 @@ public interface OrderdetailsMapper {
 
     List<Orderdetails> selectByExample(OrderdetailsExample example);
 
-    Orderdetails selectByPrimaryKey(Integer detailsid);
+    Orderdetails selectByPrimaryKey(OrderdetailsKey key);
 
     int updateByExampleSelective(@Param("record") Orderdetails record, @Param("example") OrderdetailsExample example);
 

@@ -5,7 +5,7 @@
     <id column="workOrderId" jdbcType="INTEGER" property="workorderid" />
     <result column="problemDescription" jdbcType="VARCHAR" property="problemdescription" />
     <result column="solution" jdbcType="VARCHAR" property="solution" />
-    <result column="stats" jdbcType="VARCHAR" property="stats" />
+    <result column="stats" jdbcType="INTEGER" property="stats" />
     <result column="returnVisit" jdbcType="VARCHAR" property="returnvisit" />
     <result column="amount" jdbcType="DOUBLE" property="amount" />
   </resultMap>
@@ -106,7 +106,7 @@
       solution, stats, returnVisit, 
       amount)
     values (#{workorderid,jdbcType=INTEGER}, #{problemdescription,jdbcType=VARCHAR}, 
-      #{solution,jdbcType=VARCHAR}, #{stats,jdbcType=VARCHAR}, #{returnvisit,jdbcType=VARCHAR}, 
+      #{solution,jdbcType=VARCHAR}, #{stats,jdbcType=INTEGER}, #{returnvisit,jdbcType=VARCHAR}, 
       #{amount,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Workorder">
@@ -142,7 +142,7 @@
         #{solution,jdbcType=VARCHAR},
       </if>
       <if test="stats != null">
-        #{stats,jdbcType=VARCHAR},
+        #{stats,jdbcType=INTEGER},
       </if>
       <if test="returnvisit != null">
         #{returnvisit,jdbcType=VARCHAR},
@@ -171,7 +171,7 @@
         solution = #{record.solution,jdbcType=VARCHAR},
       </if>
       <if test="record.stats != null">
-        stats = #{record.stats,jdbcType=VARCHAR},
+        stats = #{record.stats,jdbcType=INTEGER},
       </if>
       <if test="record.returnvisit != null">
         returnVisit = #{record.returnvisit,jdbcType=VARCHAR},
@@ -189,7 +189,7 @@
     set workOrderId = #{record.workorderid,jdbcType=INTEGER},
       problemDescription = #{record.problemdescription,jdbcType=VARCHAR},
       solution = #{record.solution,jdbcType=VARCHAR},
-      stats = #{record.stats,jdbcType=VARCHAR},
+      stats = #{record.stats,jdbcType=INTEGER},
       returnVisit = #{record.returnvisit,jdbcType=VARCHAR},
       amount = #{record.amount,jdbcType=DOUBLE}
     <if test="_parameter != null">
@@ -206,7 +206,7 @@
         solution = #{solution,jdbcType=VARCHAR},
       </if>
       <if test="stats != null">
-        stats = #{stats,jdbcType=VARCHAR},
+        stats = #{stats,jdbcType=INTEGER},
       </if>
       <if test="returnvisit != null">
         returnVisit = #{returnvisit,jdbcType=VARCHAR},
@@ -221,7 +221,7 @@
     update workOrder
     set problemDescription = #{problemdescription,jdbcType=VARCHAR},
       solution = #{solution,jdbcType=VARCHAR},
-      stats = #{stats,jdbcType=VARCHAR},
+      stats = #{stats,jdbcType=INTEGER},
       returnVisit = #{returnvisit,jdbcType=VARCHAR},
       amount = #{amount,jdbcType=DOUBLE}
     where workOrderId = #{workorderid,jdbcType=INTEGER}

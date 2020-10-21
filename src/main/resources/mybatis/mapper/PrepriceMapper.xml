@@ -6,7 +6,7 @@
     <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
     <result column="tradePrice" jdbcType="DOUBLE" property="tradeprice" />
     <result column="wholesalerName" jdbcType="VARCHAR" property="wholesalername" />
-    <result column="marketPrice" jdbcType="DECIMAL" property="marketprice" />
+    <result column="marketPrice" jdbcType="DOUBLE" property="marketprice" />
     <result column="marketName" jdbcType="VARCHAR" property="marketname" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="inputTime" jdbcType="TIMESTAMP" property="inputtime" />
@@ -110,7 +110,7 @@
       marketName, time, inputTime
       )
     values (#{preproductid,jdbcType=INTEGER}, #{measurementmethod,jdbcType=VARCHAR}, 
-      #{tradeprice,jdbcType=DOUBLE}, #{wholesalername,jdbcType=VARCHAR}, #{marketprice,jdbcType=DECIMAL}, 
+      #{tradeprice,jdbcType=DOUBLE}, #{wholesalername,jdbcType=VARCHAR}, #{marketprice,jdbcType=DOUBLE}, 
       #{marketname,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{inputtime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -156,7 +156,7 @@
         #{wholesalername,jdbcType=VARCHAR},
       </if>
       <if test="marketprice != null">
-        #{marketprice,jdbcType=DECIMAL},
+        #{marketprice,jdbcType=DOUBLE},
       </if>
       <if test="marketname != null">
         #{marketname,jdbcType=VARCHAR},
@@ -191,7 +191,7 @@
         wholesalerName = #{record.wholesalername,jdbcType=VARCHAR},
       </if>
       <if test="record.marketprice != null">
-        marketPrice = #{record.marketprice,jdbcType=DECIMAL},
+        marketPrice = #{record.marketprice,jdbcType=DOUBLE},
       </if>
       <if test="record.marketname != null">
         marketName = #{record.marketname,jdbcType=VARCHAR},
@@ -213,7 +213,7 @@
       measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
       tradePrice = #{record.tradeprice,jdbcType=DOUBLE},
       wholesalerName = #{record.wholesalername,jdbcType=VARCHAR},
-      marketPrice = #{record.marketprice,jdbcType=DECIMAL},
+      marketPrice = #{record.marketprice,jdbcType=DOUBLE},
       marketName = #{record.marketname,jdbcType=VARCHAR},
       time = #{record.time,jdbcType=TIMESTAMP},
       inputTime = #{record.inputtime,jdbcType=TIMESTAMP}
@@ -234,7 +234,7 @@
         wholesalerName = #{wholesalername,jdbcType=VARCHAR},
       </if>
       <if test="marketprice != null">
-        marketPrice = #{marketprice,jdbcType=DECIMAL},
+        marketPrice = #{marketprice,jdbcType=DOUBLE},
       </if>
       <if test="marketname != null">
         marketName = #{marketname,jdbcType=VARCHAR},
@@ -253,7 +253,7 @@
     set measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
       tradePrice = #{tradeprice,jdbcType=DOUBLE},
       wholesalerName = #{wholesalername,jdbcType=VARCHAR},
-      marketPrice = #{marketprice,jdbcType=DECIMAL},
+      marketPrice = #{marketprice,jdbcType=DOUBLE},
       marketName = #{marketname,jdbcType=VARCHAR},
       time = #{time,jdbcType=TIMESTAMP},
       inputTime = #{inputtime,jdbcType=TIMESTAMP}

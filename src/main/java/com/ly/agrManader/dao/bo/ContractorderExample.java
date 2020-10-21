@@ -475,62 +475,52 @@ public class ContractorderExample {
             return (Criteria) this;
         }
 
-        public Criteria andWarehousEqualTo(String value) {
+        public Criteria andWarehousEqualTo(Integer value) {
             addCriterion("warehous =", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousNotEqualTo(String value) {
+        public Criteria andWarehousNotEqualTo(Integer value) {
             addCriterion("warehous <>", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousGreaterThan(String value) {
+        public Criteria andWarehousGreaterThan(Integer value) {
             addCriterion("warehous >", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousGreaterThanOrEqualTo(String value) {
+        public Criteria andWarehousGreaterThanOrEqualTo(Integer value) {
             addCriterion("warehous >=", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousLessThan(String value) {
+        public Criteria andWarehousLessThan(Integer value) {
             addCriterion("warehous <", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousLessThanOrEqualTo(String value) {
+        public Criteria andWarehousLessThanOrEqualTo(Integer value) {
             addCriterion("warehous <=", value, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousLike(String value) {
-            addCriterion("warehous like", value, "warehous");
-            return (Criteria) this;
-        }
-
-        public Criteria andWarehousNotLike(String value) {
-            addCriterion("warehous not like", value, "warehous");
-            return (Criteria) this;
-        }
-
-        public Criteria andWarehousIn(List<String> values) {
+        public Criteria andWarehousIn(List<Integer> values) {
             addCriterion("warehous in", values, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousNotIn(List<String> values) {
+        public Criteria andWarehousNotIn(List<Integer> values) {
             addCriterion("warehous not in", values, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousBetween(String value1, String value2) {
+        public Criteria andWarehousBetween(Integer value1, Integer value2) {
             addCriterion("warehous between", value1, value2, "warehous");
             return (Criteria) this;
         }
 
-        public Criteria andWarehousNotBetween(String value1, String value2) {
+        public Criteria andWarehousNotBetween(Integer value1, Integer value2) {
             addCriterion("warehous not between", value1, value2, "warehous");
             return (Criteria) this;
         }
@@ -545,62 +535,52 @@ public class ContractorderExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessEqualTo(String value) {
+        public Criteria andOrderprocessEqualTo(Integer value) {
             addCriterion("orderProcess =", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessNotEqualTo(String value) {
+        public Criteria andOrderprocessNotEqualTo(Integer value) {
             addCriterion("orderProcess <>", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessGreaterThan(String value) {
+        public Criteria andOrderprocessGreaterThan(Integer value) {
             addCriterion("orderProcess >", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessGreaterThanOrEqualTo(String value) {
+        public Criteria andOrderprocessGreaterThanOrEqualTo(Integer value) {
             addCriterion("orderProcess >=", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessLessThan(String value) {
+        public Criteria andOrderprocessLessThan(Integer value) {
             addCriterion("orderProcess <", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessLessThanOrEqualTo(String value) {
+        public Criteria andOrderprocessLessThanOrEqualTo(Integer value) {
             addCriterion("orderProcess <=", value, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessLike(String value) {
-            addCriterion("orderProcess like", value, "orderprocess");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderprocessNotLike(String value) {
-            addCriterion("orderProcess not like", value, "orderprocess");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderprocessIn(List<String> values) {
+        public Criteria andOrderprocessIn(List<Integer> values) {
             addCriterion("orderProcess in", values, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessNotIn(List<String> values) {
+        public Criteria andOrderprocessNotIn(List<Integer> values) {
             addCriterion("orderProcess not in", values, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessBetween(String value1, String value2) {
+        public Criteria andOrderprocessBetween(Integer value1, Integer value2) {
             addCriterion("orderProcess between", value1, value2, "orderprocess");
             return (Criteria) this;
         }
 
-        public Criteria andOrderprocessNotBetween(String value1, String value2) {
+        public Criteria andOrderprocessNotBetween(Integer value1, Integer value2) {
             addCriterion("orderProcess not between", value1, value2, "orderprocess");
             return (Criteria) this;
         }

@@ -15,9 +15,9 @@ public class Contractorder {
 
     private Integer qualitystate;
 
-    private String warehous;
+    private Integer warehous;
 
-    private String orderprocess;
+    private Integer orderprocess;
 
     private Integer customerid;
 
@@ -71,19 +71,19 @@ public class Contractorder {
         this.qualitystate = qualitystate;
     }
 
-    public String getWarehous() {
+    public Integer getWarehous() {
         return warehous;
     }
 
-    public void setWarehous(String warehous) {
+    public void setWarehous(Integer warehous) {
         this.warehous = warehous;
     }
 
-    public String getOrderprocess() {
+    public Integer getOrderprocess() {
         return orderprocess;
     }
 
-    public void setOrderprocess(String orderprocess) {
+    public void setOrderprocess(Integer orderprocess) {
         this.orderprocess = orderprocess;
     }
 

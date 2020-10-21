@@ -7,7 +7,7 @@ public class Workorder {
 
     private String solution;
 
-    private String stats;
+    private Integer stats;
 
     private String returnvisit;
 
@@ -37,11 +37,11 @@ public class Workorder {
         this.solution = solution;
     }
 
-    public String getStats() {
+    public Integer getStats() {
         return stats;
     }
 
-    public void setStats(String stats) {
+    public void setStats(Integer stats) {
         this.stats = stats;
     }
 

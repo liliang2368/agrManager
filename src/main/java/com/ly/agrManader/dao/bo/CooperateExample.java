@@ -575,62 +575,52 @@ public class CooperateExample {
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffEqualTo(String value) {
+        public Criteria andSarketstaffEqualTo(Integer value) {
             addCriterion("sarketStaff =", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffNotEqualTo(String value) {
+        public Criteria andSarketstaffNotEqualTo(Integer value) {
             addCriterion("sarketStaff <>", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffGreaterThan(String value) {
+        public Criteria andSarketstaffGreaterThan(Integer value) {
             addCriterion("sarketStaff >", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffGreaterThanOrEqualTo(String value) {
+        public Criteria andSarketstaffGreaterThanOrEqualTo(Integer value) {
             addCriterion("sarketStaff >=", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffLessThan(String value) {
+        public Criteria andSarketstaffLessThan(Integer value) {
             addCriterion("sarketStaff <", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffLessThanOrEqualTo(String value) {
+        public Criteria andSarketstaffLessThanOrEqualTo(Integer value) {
             addCriterion("sarketStaff <=", value, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffLike(String value) {
-            addCriterion("sarketStaff like", value, "sarketstaff");
-            return (Criteria) this;
-        }
-
-        public Criteria andSarketstaffNotLike(String value) {
-            addCriterion("sarketStaff not like", value, "sarketstaff");
-            return (Criteria) this;
-        }
-
-        public Criteria andSarketstaffIn(List<String> values) {
+        public Criteria andSarketstaffIn(List<Integer> values) {
             addCriterion("sarketStaff in", values, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffNotIn(List<String> values) {
+        public Criteria andSarketstaffNotIn(List<Integer> values) {
             addCriterion("sarketStaff not in", values, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffBetween(String value1, String value2) {
+        public Criteria andSarketstaffBetween(Integer value1, Integer value2) {
             addCriterion("sarketStaff between", value1, value2, "sarketstaff");
             return (Criteria) this;
         }
 
-        public Criteria andSarketstaffNotBetween(String value1, String value2) {
+        public Criteria andSarketstaffNotBetween(Integer value1, Integer value2) {
             addCriterion("sarketStaff not between", value1, value2, "sarketstaff");
             return (Criteria) this;
         }

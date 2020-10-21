@@ -7,7 +7,7 @@ public class Qualitytest {
 
     private String specificstandard;
 
-    private String certificate;
+    private Integer certificate;
 
     private Integer stats;
 
@@ -35,11 +35,11 @@ public class Qualitytest {
         this.specificstandard = specificstandard;
     }
 
-    public String getCertificate() {
+    public Integer getCertificate() {
         return certificate;
     }
 
-    public void setCertificate(String certificate) {
+    public void setCertificate(Integer certificate) {
         this.certificate = certificate;
     }
 

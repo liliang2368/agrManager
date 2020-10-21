@@ -314,62 +314,52 @@ public class QualitytestExample {
             return (Criteria) this;
         }
 
-        public Criteria andCertificateEqualTo(String value) {
+        public Criteria andCertificateEqualTo(Integer value) {
             addCriterion("certificate =", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateNotEqualTo(String value) {
+        public Criteria andCertificateNotEqualTo(Integer value) {
             addCriterion("certificate <>", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateGreaterThan(String value) {
+        public Criteria andCertificateGreaterThan(Integer value) {
             addCriterion("certificate >", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateGreaterThanOrEqualTo(String value) {
+        public Criteria andCertificateGreaterThanOrEqualTo(Integer value) {
             addCriterion("certificate >=", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateLessThan(String value) {
+        public Criteria andCertificateLessThan(Integer value) {
             addCriterion("certificate <", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateLessThanOrEqualTo(String value) {
+        public Criteria andCertificateLessThanOrEqualTo(Integer value) {
             addCriterion("certificate <=", value, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateLike(String value) {
-            addCriterion("certificate like", value, "certificate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertificateNotLike(String value) {
-            addCriterion("certificate not like", value, "certificate");
-            return (Criteria) this;
-        }
-
-        public Criteria andCertificateIn(List<String> values) {
+        public Criteria andCertificateIn(List<Integer> values) {
             addCriterion("certificate in", values, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateNotIn(List<String> values) {
+        public Criteria andCertificateNotIn(List<Integer> values) {
             addCriterion("certificate not in", values, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateBetween(String value1, String value2) {
+        public Criteria andCertificateBetween(Integer value1, Integer value2) {
             addCriterion("certificate between", value1, value2, "certificate");
             return (Criteria) this;
         }
 
-        public Criteria andCertificateNotBetween(String value1, String value2) {
+        public Criteria andCertificateNotBetween(Integer value1, Integer value2) {
             addCriterion("certificate not between", value1, value2, "certificate");
             return (Criteria) this;
         }

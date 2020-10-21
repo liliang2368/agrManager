@@ -5,7 +5,7 @@
     <id column="contractId" jdbcType="INTEGER" property="contractid" />
     <result column="qualityStandard" jdbcType="VARCHAR" property="qualitystandard" />
     <result column="specificStandard" jdbcType="VARCHAR" property="specificstandard" />
-    <result column="certificate" jdbcType="VARCHAR" property="certificate" />
+    <result column="certificate" jdbcType="INTEGER" property="certificate" />
     <result column="stats" jdbcType="INTEGER" property="stats" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -104,7 +104,7 @@
     insert into qualityTest (contractId, qualityStandard, specificStandard, 
       certificate, stats)
     values (#{contractid,jdbcType=INTEGER}, #{qualitystandard,jdbcType=VARCHAR}, #{specificstandard,jdbcType=VARCHAR}, 
-      #{certificate,jdbcType=VARCHAR}, #{stats,jdbcType=INTEGER})
+      #{certificate,jdbcType=INTEGER}, #{stats,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Qualitytest">
     insert into qualityTest
@@ -136,7 +136,7 @@
         #{specificstandard,jdbcType=VARCHAR},
       </if>
       <if test="certificate != null">
-        #{certificate,jdbcType=VARCHAR},
+        #{certificate,jdbcType=INTEGER},
       </if>
       <if test="stats != null">
         #{stats,jdbcType=INTEGER},
@@ -162,7 +162,7 @@
         specificStandard = #{record.specificstandard,jdbcType=VARCHAR},
       </if>
       <if test="record.certificate != null">
-        certificate = #{record.certificate,jdbcType=VARCHAR},
+        certificate = #{record.certificate,jdbcType=INTEGER},
       </if>
       <if test="record.stats != null">
         stats = #{record.stats,jdbcType=INTEGER},
@@ -177,7 +177,7 @@
     set contractId = #{record.contractid,jdbcType=INTEGER},
       qualityStandard = #{record.qualitystandard,jdbcType=VARCHAR},
       specificStandard = #{record.specificstandard,jdbcType=VARCHAR},
-      certificate = #{record.certificate,jdbcType=VARCHAR},
+      certificate = #{record.certificate,jdbcType=INTEGER},
       stats = #{record.stats,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -193,7 +193,7 @@
         specificStandard = #{specificstandard,jdbcType=VARCHAR},
       </if>
       <if test="certificate != null">
-        certificate = #{certificate,jdbcType=VARCHAR},
+        certificate = #{certificate,jdbcType=INTEGER},
       </if>
       <if test="stats != null">
         stats = #{stats,jdbcType=INTEGER},
@@ -205,7 +205,7 @@
     update qualityTest
     set qualityStandard = #{qualitystandard,jdbcType=VARCHAR},
       specificStandard = #{specificstandard,jdbcType=VARCHAR},
-      certificate = #{certificate,jdbcType=VARCHAR},
+      certificate = #{certificate,jdbcType=INTEGER},
       stats = #{stats,jdbcType=INTEGER}
     where contractId = #{contractid,jdbcType=INTEGER}
   </update>

@@ -9,7 +9,7 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="timeIn" jdbcType="TIMESTAMP" property="timein" />
     <result column="timeOut" jdbcType="TIMESTAMP" property="timeout" />
-    <result column="sarketStaff" jdbcType="VARCHAR" property="sarketstaff" />
+    <result column="sarketStaff" jdbcType="INTEGER" property="sarketstaff" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="reputation" jdbcType="INTEGER" property="reputation" />
   </resultMap>
@@ -113,7 +113,7 @@
       reputation)
     values (#{cooperativeid,jdbcType=INTEGER}, #{cooperativename,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{timein,jdbcType=TIMESTAMP}, 
-      #{timeout,jdbcType=TIMESTAMP}, #{sarketstaff,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, 
+      #{timeout,jdbcType=TIMESTAMP}, #{sarketstaff,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}, 
       #{reputation,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Cooperate">
@@ -173,7 +173,7 @@
         #{timeout,jdbcType=TIMESTAMP},
       </if>
       <if test="sarketstaff != null">
-        #{sarketstaff,jdbcType=VARCHAR},
+        #{sarketstaff,jdbcType=INTEGER},
       </if>
       <if test="time != null">
         #{time,jdbcType=TIMESTAMP},
@@ -214,7 +214,7 @@
         timeOut = #{record.timeout,jdbcType=TIMESTAMP},
       </if>
       <if test="record.sarketstaff != null">
-        sarketStaff = #{record.sarketstaff,jdbcType=VARCHAR},
+        sarketStaff = #{record.sarketstaff,jdbcType=INTEGER},
       </if>
       <if test="record.time != null">
         time = #{record.time,jdbcType=TIMESTAMP},
@@ -236,7 +236,7 @@
       address = #{record.address,jdbcType=VARCHAR},
       timeIn = #{record.timein,jdbcType=TIMESTAMP},
       timeOut = #{record.timeout,jdbcType=TIMESTAMP},
-      sarketStaff = #{record.sarketstaff,jdbcType=VARCHAR},
+      sarketStaff = #{record.sarketstaff,jdbcType=INTEGER},
       time = #{record.time,jdbcType=TIMESTAMP},
       reputation = #{record.reputation,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -265,7 +265,7 @@
         timeOut = #{timeout,jdbcType=TIMESTAMP},
       </if>
       <if test="sarketstaff != null">
-        sarketStaff = #{sarketstaff,jdbcType=VARCHAR},
+        sarketStaff = #{sarketstaff,jdbcType=INTEGER},
       </if>
       <if test="time != null">
         time = #{time,jdbcType=TIMESTAMP},
@@ -284,7 +284,7 @@
       address = #{address,jdbcType=VARCHAR},
       timeIn = #{timein,jdbcType=TIMESTAMP},
       timeOut = #{timeout,jdbcType=TIMESTAMP},
-      sarketStaff = #{sarketstaff,jdbcType=VARCHAR},
+      sarketStaff = #{sarketstaff,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP},
       reputation = #{reputation,jdbcType=INTEGER}
     where cooperativeId = #{cooperativeid,jdbcType=INTEGER}

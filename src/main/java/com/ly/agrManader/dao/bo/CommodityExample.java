@@ -1,6 +1,5 @@
 package com.ly.agrManader.dao.bo;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -375,62 +374,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodEqualTo(String value) {
+        public Criteria andQualityguaranteeperiodEqualTo(Integer value) {
             addCriterion("qualityGuaranteePeriod =", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodNotEqualTo(String value) {
+        public Criteria andQualityguaranteeperiodNotEqualTo(Integer value) {
             addCriterion("qualityGuaranteePeriod <>", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodGreaterThan(String value) {
+        public Criteria andQualityguaranteeperiodGreaterThan(Integer value) {
             addCriterion("qualityGuaranteePeriod >", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodGreaterThanOrEqualTo(String value) {
+        public Criteria andQualityguaranteeperiodGreaterThanOrEqualTo(Integer value) {
             addCriterion("qualityGuaranteePeriod >=", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodLessThan(String value) {
+        public Criteria andQualityguaranteeperiodLessThan(Integer value) {
             addCriterion("qualityGuaranteePeriod <", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodLessThanOrEqualTo(String value) {
+        public Criteria andQualityguaranteeperiodLessThanOrEqualTo(Integer value) {
             addCriterion("qualityGuaranteePeriod <=", value, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodLike(String value) {
-            addCriterion("qualityGuaranteePeriod like", value, "qualityguaranteeperiod");
-            return (Criteria) this;
-        }
-
-        public Criteria andQualityguaranteeperiodNotLike(String value) {
-            addCriterion("qualityGuaranteePeriod not like", value, "qualityguaranteeperiod");
-            return (Criteria) this;
-        }
-
-        public Criteria andQualityguaranteeperiodIn(List<String> values) {
+        public Criteria andQualityguaranteeperiodIn(List<Integer> values) {
             addCriterion("qualityGuaranteePeriod in", values, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodNotIn(List<String> values) {
+        public Criteria andQualityguaranteeperiodNotIn(List<Integer> values) {
             addCriterion("qualityGuaranteePeriod not in", values, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodBetween(String value1, String value2) {
+        public Criteria andQualityguaranteeperiodBetween(Integer value1, Integer value2) {
             addCriterion("qualityGuaranteePeriod between", value1, value2, "qualityguaranteeperiod");
             return (Criteria) this;
         }
 
-        public Criteria andQualityguaranteeperiodNotBetween(String value1, String value2) {
+        public Criteria andQualityguaranteeperiodNotBetween(Integer value1, Integer value2) {
             addCriterion("qualityGuaranteePeriod not between", value1, value2, "qualityguaranteeperiod");
             return (Criteria) this;
         }
@@ -445,62 +434,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andMinstockEqualTo(String value) {
+        public Criteria andMinstockEqualTo(Integer value) {
             addCriterion("minStock =", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockNotEqualTo(String value) {
+        public Criteria andMinstockNotEqualTo(Integer value) {
             addCriterion("minStock <>", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockGreaterThan(String value) {
+        public Criteria andMinstockGreaterThan(Integer value) {
             addCriterion("minStock >", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockGreaterThanOrEqualTo(String value) {
+        public Criteria andMinstockGreaterThanOrEqualTo(Integer value) {
             addCriterion("minStock >=", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockLessThan(String value) {
+        public Criteria andMinstockLessThan(Integer value) {
             addCriterion("minStock <", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockLessThanOrEqualTo(String value) {
+        public Criteria andMinstockLessThanOrEqualTo(Integer value) {
             addCriterion("minStock <=", value, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockLike(String value) {
-            addCriterion("minStock like", value, "minstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andMinstockNotLike(String value) {
-            addCriterion("minStock not like", value, "minstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andMinstockIn(List<String> values) {
+        public Criteria andMinstockIn(List<Integer> values) {
             addCriterion("minStock in", values, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockNotIn(List<String> values) {
+        public Criteria andMinstockNotIn(List<Integer> values) {
             addCriterion("minStock not in", values, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockBetween(String value1, String value2) {
+        public Criteria andMinstockBetween(Integer value1, Integer value2) {
             addCriterion("minStock between", value1, value2, "minstock");
             return (Criteria) this;
         }
 
-        public Criteria andMinstockNotBetween(String value1, String value2) {
+        public Criteria andMinstockNotBetween(Integer value1, Integer value2) {
             addCriterion("minStock not between", value1, value2, "minstock");
             return (Criteria) this;
         }
@@ -515,62 +494,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andStockEqualTo(String value) {
+        public Criteria andStockEqualTo(Integer value) {
             addCriterion("stock =", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockNotEqualTo(String value) {
+        public Criteria andStockNotEqualTo(Integer value) {
             addCriterion("stock <>", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockGreaterThan(String value) {
+        public Criteria andStockGreaterThan(Integer value) {
             addCriterion("stock >", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockGreaterThanOrEqualTo(String value) {
+        public Criteria andStockGreaterThanOrEqualTo(Integer value) {
             addCriterion("stock >=", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockLessThan(String value) {
+        public Criteria andStockLessThan(Integer value) {
             addCriterion("stock <", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockLessThanOrEqualTo(String value) {
+        public Criteria andStockLessThanOrEqualTo(Integer value) {
             addCriterion("stock <=", value, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockLike(String value) {
-            addCriterion("stock like", value, "stock");
-            return (Criteria) this;
-        }
-
-        public Criteria andStockNotLike(String value) {
-            addCriterion("stock not like", value, "stock");
-            return (Criteria) this;
-        }
-
-        public Criteria andStockIn(List<String> values) {
+        public Criteria andStockIn(List<Integer> values) {
             addCriterion("stock in", values, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockNotIn(List<String> values) {
+        public Criteria andStockNotIn(List<Integer> values) {
             addCriterion("stock not in", values, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockBetween(String value1, String value2) {
+        public Criteria andStockBetween(Integer value1, Integer value2) {
             addCriterion("stock between", value1, value2, "stock");
             return (Criteria) this;
         }
 
-        public Criteria andStockNotBetween(String value1, String value2) {
+        public Criteria andStockNotBetween(Integer value1, Integer value2) {
             addCriterion("stock not between", value1, value2, "stock");
             return (Criteria) this;
         }
@@ -585,62 +554,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockEqualTo(String value) {
+        public Criteria andMaxstockEqualTo(Integer value) {
             addCriterion("maxStock =", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockNotEqualTo(String value) {
+        public Criteria andMaxstockNotEqualTo(Integer value) {
             addCriterion("maxStock <>", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockGreaterThan(String value) {
+        public Criteria andMaxstockGreaterThan(Integer value) {
             addCriterion("maxStock >", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockGreaterThanOrEqualTo(String value) {
+        public Criteria andMaxstockGreaterThanOrEqualTo(Integer value) {
             addCriterion("maxStock >=", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockLessThan(String value) {
+        public Criteria andMaxstockLessThan(Integer value) {
             addCriterion("maxStock <", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockLessThanOrEqualTo(String value) {
+        public Criteria andMaxstockLessThanOrEqualTo(Integer value) {
             addCriterion("maxStock <=", value, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockLike(String value) {
-            addCriterion("maxStock like", value, "maxstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaxstockNotLike(String value) {
-            addCriterion("maxStock not like", value, "maxstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andMaxstockIn(List<String> values) {
+        public Criteria andMaxstockIn(List<Integer> values) {
             addCriterion("maxStock in", values, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockNotIn(List<String> values) {
+        public Criteria andMaxstockNotIn(List<Integer> values) {
             addCriterion("maxStock not in", values, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockBetween(String value1, String value2) {
+        public Criteria andMaxstockBetween(Integer value1, Integer value2) {
             addCriterion("maxStock between", value1, value2, "maxstock");
             return (Criteria) this;
         }
 
-        public Criteria andMaxstockNotBetween(String value1, String value2) {
+        public Criteria andMaxstockNotBetween(Integer value1, Integer value2) {
             addCriterion("maxStock not between", value1, value2, "maxstock");
             return (Criteria) this;
         }
@@ -655,62 +614,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockEqualTo(String value) {
+        public Criteria andRecommendstockEqualTo(Integer value) {
             addCriterion("recommendStock =", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockNotEqualTo(String value) {
+        public Criteria andRecommendstockNotEqualTo(Integer value) {
             addCriterion("recommendStock <>", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockGreaterThan(String value) {
+        public Criteria andRecommendstockGreaterThan(Integer value) {
             addCriterion("recommendStock >", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockGreaterThanOrEqualTo(String value) {
+        public Criteria andRecommendstockGreaterThanOrEqualTo(Integer value) {
             addCriterion("recommendStock >=", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockLessThan(String value) {
+        public Criteria andRecommendstockLessThan(Integer value) {
             addCriterion("recommendStock <", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockLessThanOrEqualTo(String value) {
+        public Criteria andRecommendstockLessThanOrEqualTo(Integer value) {
             addCriterion("recommendStock <=", value, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockLike(String value) {
-            addCriterion("recommendStock like", value, "recommendstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecommendstockNotLike(String value) {
-            addCriterion("recommendStock not like", value, "recommendstock");
-            return (Criteria) this;
-        }
-
-        public Criteria andRecommendstockIn(List<String> values) {
+        public Criteria andRecommendstockIn(List<Integer> values) {
             addCriterion("recommendStock in", values, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockNotIn(List<String> values) {
+        public Criteria andRecommendstockNotIn(List<Integer> values) {
             addCriterion("recommendStock not in", values, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockBetween(String value1, String value2) {
+        public Criteria andRecommendstockBetween(Integer value1, Integer value2) {
             addCriterion("recommendStock between", value1, value2, "recommendstock");
             return (Criteria) this;
         }
 
-        public Criteria andRecommendstockNotBetween(String value1, String value2) {
+        public Criteria andRecommendstockNotBetween(Integer value1, Integer value2) {
             addCriterion("recommendStock not between", value1, value2, "recommendstock");
             return (Criteria) this;
         }
@@ -725,52 +674,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andPriceEqualTo(BigDecimal value) {
+        public Criteria andPriceEqualTo(Double value) {
             addCriterion("price =", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotEqualTo(BigDecimal value) {
+        public Criteria andPriceNotEqualTo(Double value) {
             addCriterion("price <>", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThan(BigDecimal value) {
+        public Criteria andPriceGreaterThan(Double value) {
             addCriterion("price >", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andPriceGreaterThanOrEqualTo(Double value) {
             addCriterion("price >=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThan(BigDecimal value) {
+        public Criteria andPriceLessThan(Double value) {
             addCriterion("price <", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andPriceLessThanOrEqualTo(Double value) {
             addCriterion("price <=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceIn(List<BigDecimal> values) {
+        public Criteria andPriceIn(List<Double> values) {
             addCriterion("price in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotIn(List<BigDecimal> values) {
+        public Criteria andPriceNotIn(List<Double> values) {
             addCriterion("price not in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPriceBetween(Double value1, Double value2) {
             addCriterion("price between", value1, value2, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andPriceNotBetween(Double value1, Double value2) {
             addCriterion("price not between", value1, value2, "price");
             return (Criteria) this;
         }
@@ -785,62 +734,52 @@ public class CommodityExample {
             return (Criteria) this;
         }
 
-        public Criteria andGradeEqualTo(String value) {
+        public Criteria andGradeEqualTo(Integer value) {
             addCriterion("Grade =", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeNotEqualTo(String value) {
+        public Criteria andGradeNotEqualTo(Integer value) {
             addCriterion("Grade <>", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeGreaterThan(String value) {
+        public Criteria andGradeGreaterThan(Integer value) {
             addCriterion("Grade >", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeGreaterThanOrEqualTo(String value) {
+        public Criteria andGradeGreaterThanOrEqualTo(Integer value) {
             addCriterion("Grade >=", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeLessThan(String value) {
+        public Criteria andGradeLessThan(Integer value) {
             addCriterion("Grade <", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeLessThanOrEqualTo(String value) {
+        public Criteria andGradeLessThanOrEqualTo(Integer value) {
             addCriterion("Grade <=", value, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeLike(String value) {
-            addCriterion("Grade like", value, "grade");
-            return (Criteria) this;
-        }
-
-        public Criteria andGradeNotLike(String value) {
-            addCriterion("Grade not like", value, "grade");
-            return (Criteria) this;
-        }
-
-        public Criteria andGradeIn(List<String> values) {
+        public Criteria andGradeIn(List<Integer> values) {
             addCriterion("Grade in", values, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeNotIn(List<String> values) {
+        public Criteria andGradeNotIn(List<Integer> values) {
             addCriterion("Grade not in", values, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeBetween(String value1, String value2) {
+        public Criteria andGradeBetween(Integer value1, Integer value2) {
             addCriterion("Grade between", value1, value2, "grade");
             return (Criteria) this;
         }
 
-        public Criteria andGradeNotBetween(String value1, String value2) {
+        public Criteria andGradeNotBetween(Integer value1, Integer value2) {
             addCriterion("Grade not between", value1, value2, "grade");
             return (Criteria) this;
         }

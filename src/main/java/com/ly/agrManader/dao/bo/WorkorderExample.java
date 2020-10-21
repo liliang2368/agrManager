@@ -314,62 +314,52 @@ public class WorkorderExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatsEqualTo(String value) {
+        public Criteria andStatsEqualTo(Integer value) {
             addCriterion("stats =", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsNotEqualTo(String value) {
+        public Criteria andStatsNotEqualTo(Integer value) {
             addCriterion("stats <>", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsGreaterThan(String value) {
+        public Criteria andStatsGreaterThan(Integer value) {
             addCriterion("stats >", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsGreaterThanOrEqualTo(String value) {
+        public Criteria andStatsGreaterThanOrEqualTo(Integer value) {
             addCriterion("stats >=", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsLessThan(String value) {
+        public Criteria andStatsLessThan(Integer value) {
             addCriterion("stats <", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsLessThanOrEqualTo(String value) {
+        public Criteria andStatsLessThanOrEqualTo(Integer value) {
             addCriterion("stats <=", value, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsLike(String value) {
-            addCriterion("stats like", value, "stats");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatsNotLike(String value) {
-            addCriterion("stats not like", value, "stats");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatsIn(List<String> values) {
+        public Criteria andStatsIn(List<Integer> values) {
             addCriterion("stats in", values, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsNotIn(List<String> values) {
+        public Criteria andStatsNotIn(List<Integer> values) {
             addCriterion("stats not in", values, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsBetween(String value1, String value2) {
+        public Criteria andStatsBetween(Integer value1, Integer value2) {
             addCriterion("stats between", value1, value2, "stats");
             return (Criteria) this;
         }
 
-        public Criteria andStatsNotBetween(String value1, String value2) {
+        public Criteria andStatsNotBetween(Integer value1, Integer value2) {
             addCriterion("stats not between", value1, value2, "stats");
             return (Criteria) this;
         }

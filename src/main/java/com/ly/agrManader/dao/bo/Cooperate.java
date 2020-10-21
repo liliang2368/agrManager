@@ -17,7 +17,7 @@ public class Cooperate {
 
     private Date timeout;
 
-    private String sarketstaff;
+    private Integer sarketstaff;
 
     private Date time;
 
@@ -79,11 +79,11 @@ public class Cooperate {
         this.timeout = timeout;
     }
 
-    public String getSarketstaff() {
+    public Integer getSarketstaff() {
         return sarketstaff;
     }
 
-    public void setSarketstaff(String sarketstaff) {
+    public void setSarketstaff(Integer sarketstaff) {
         this.sarketstaff = sarketstaff;
     }
 

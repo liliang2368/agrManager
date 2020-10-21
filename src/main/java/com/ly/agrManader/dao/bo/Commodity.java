@@ -1,7 +1,5 @@
 package com.ly.agrManader.dao.bo;
 
-import java.math.BigDecimal;
-
 public class Commodity {
     private Integer commodityid;
 
@@ -11,19 +9,19 @@ public class Commodity {
 
     private String storagemethod;
 
-    private String qualityguaranteeperiod;
+    private Integer qualityguaranteeperiod;
 
-    private String minstock;
+    private Integer minstock;
 
-    private String stock;
+    private Integer stock;
 
-    private String maxstock;
+    private Integer maxstock;
 
-    private String recommendstock;
+    private Integer recommendstock;
 
-    private BigDecimal price;
+    private Double price;
 
-    private String grade;
+    private Integer grade;
 
     public Integer getCommodityid() {
         return commodityid;
@@ -57,59 +55,59 @@ public class Commodity {
         this.storagemethod = storagemethod;
     }
 
-    public String getQualityguaranteeperiod() {
+    public Integer getQualityguaranteeperiod() {
         return qualityguaranteeperiod;
     }
 
-    public void setQualityguaranteeperiod(String qualityguaranteeperiod) {
+    public void setQualityguaranteeperiod(Integer qualityguaranteeperiod) {
         this.qualityguaranteeperiod = qualityguaranteeperiod;
     }
 
-    public String getMinstock() {
+    public Integer getMinstock() {
         return minstock;
     }
 
-    public void setMinstock(String minstock) {
+    public void setMinstock(Integer minstock) {
         this.minstock = minstock;
     }
 
-    public String getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
-    public String getMaxstock() {
+    public Integer getMaxstock() {
         return maxstock;
     }
 
-    public void setMaxstock(String maxstock) {
+    public void setMaxstock(Integer maxstock) {
         this.maxstock = maxstock;
     }
 
-    public String getRecommendstock() {
+    public Integer getRecommendstock() {
         return recommendstock;
     }
 
-    public void setRecommendstock(String recommendstock) {
+    public void setRecommendstock(Integer recommendstock) {
         this.recommendstock = recommendstock;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public String getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 }

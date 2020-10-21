@@ -1,6 +1,5 @@
 package com.ly.agrManader.dao.bo;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -376,52 +375,52 @@ public class PrepriceExample {
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceEqualTo(BigDecimal value) {
+        public Criteria andMarketpriceEqualTo(Double value) {
             addCriterion("marketPrice =", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceNotEqualTo(BigDecimal value) {
+        public Criteria andMarketpriceNotEqualTo(Double value) {
             addCriterion("marketPrice <>", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceGreaterThan(BigDecimal value) {
+        public Criteria andMarketpriceGreaterThan(Double value) {
             addCriterion("marketPrice >", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceGreaterThanOrEqualTo(BigDecimal value) {
+        public Criteria andMarketpriceGreaterThanOrEqualTo(Double value) {
             addCriterion("marketPrice >=", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceLessThan(BigDecimal value) {
+        public Criteria andMarketpriceLessThan(Double value) {
             addCriterion("marketPrice <", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceLessThanOrEqualTo(BigDecimal value) {
+        public Criteria andMarketpriceLessThanOrEqualTo(Double value) {
             addCriterion("marketPrice <=", value, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceIn(List<BigDecimal> values) {
+        public Criteria andMarketpriceIn(List<Double> values) {
             addCriterion("marketPrice in", values, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceNotIn(List<BigDecimal> values) {
+        public Criteria andMarketpriceNotIn(List<Double> values) {
             addCriterion("marketPrice not in", values, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andMarketpriceBetween(Double value1, Double value2) {
             addCriterion("marketPrice between", value1, value2, "marketprice");
             return (Criteria) this;
         }
 
-        public Criteria andMarketpriceNotBetween(BigDecimal value1, BigDecimal value2) {
+        public Criteria andMarketpriceNotBetween(Double value1, Double value2) {
             addCriterion("marketPrice not between", value1, value2, "marketprice");
             return (Criteria) this;
         }

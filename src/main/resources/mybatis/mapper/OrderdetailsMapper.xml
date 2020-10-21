@@ -3,9 +3,9 @@
 <mapper namespace="com.ly.agrManader.dao.Interface.OrderdetailsMapper">
   <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Orderdetails">
     <id column="detailsId" jdbcType="INTEGER" property="detailsid" />
+    <id column="number" jdbcType="INTEGER" property="number" />
     <result column="contractId" jdbcType="INTEGER" property="contractid" />
-    <result column="product" jdbcType="VARCHAR" property="product" />
-    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="product" jdbcType="INTEGER" property="product" />
     <result column="unitPrice" jdbcType="DOUBLE" property="unitprice" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    detailsId, contractId, product, number, unitPrice
+    detailsId, number, contractId, product, unitPrice
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.OrderdetailsExample" resultMap="BaseResultMap">
     select
@@ -84,15 +84,17 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.OrderdetailsKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from orderDetails
     where detailsId = #{detailsid,jdbcType=INTEGER}
+      and number = #{number,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.OrderdetailsKey">
     delete from orderDetails
     where detailsId = #{detailsid,jdbcType=INTEGER}
+      and number = #{number,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.OrderdetailsExample">
     delete from orderDetails
@@ -101,10 +103,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
-    insert into orderDetails (detailsId, contractId, product, 
-      number, unitPrice)
-    values (#{detailsid,jdbcType=INTEGER}, #{contractid,jdbcType=INTEGER}, #{product,jdbcType=VARCHAR}, 
-      #{number,jdbcType=INTEGER}, #{unitprice,jdbcType=DOUBLE})
+    insert into orderDetails (detailsId, number, contractId, 
+      product, unitPrice)
+    values (#{detailsid,jdbcType=INTEGER}, #{number,jdbcType=INTEGER}, #{contractid,jdbcType=INTEGER}, 
+      #{product,jdbcType=INTEGER}, #{unitprice,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
     insert into orderDetails
@@ -112,14 +114,14 @@
       <if test="detailsid != null">
         detailsId,
       </if>
+      <if test="number != null">
+        number,
+      </if>
       <if test="contractid != null">
         contractId,
       </if>
       <if test="product != null">
         product,
-      </if>
-      <if test="number != null">
-        number,
       </if>
       <if test="unitprice != null">
         unitPrice,
@@ -129,14 +131,14 @@
       <if test="detailsid != null">
         #{detailsid,jdbcType=INTEGER},
       </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
+      </if>
       <if test="contractid != null">
         #{contractid,jdbcType=INTEGER},
       </if>
       <if test="product != null">
-        #{product,jdbcType=VARCHAR},
-      </if>
-      <if test="number != null">
-        #{number,jdbcType=INTEGER},
+        #{product,jdbcType=INTEGER},
       </if>
       <if test="unitprice != null">
         #{unitprice,jdbcType=DOUBLE},
@@ -155,14 +157,14 @@
       <if test="record.detailsid != null">
         detailsId = #{record.detailsid,jdbcType=INTEGER},
       </if>
+      <if test="record.number != null">
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
       <if test="record.contractid != null">
         contractId = #{record.contractid,jdbcType=INTEGER},
       </if>
       <if test="record.product != null">
-        product = #{record.product,jdbcType=VARCHAR},
-      </if>
-      <if test="record.number != null">
-        number = #{record.number,jdbcType=INTEGER},
+        product = #{record.product,jdbcType=INTEGER},
       </if>
       <if test="record.unitprice != null">
         unitPrice = #{record.unitprice,jdbcType=DOUBLE},
@@ -175,9 +177,9 @@
   <update id="updateByExample" parameterType="map">
     update orderDetails
     set detailsId = #{record.detailsid,jdbcType=INTEGER},
-      contractId = #{record.contractid,jdbcType=INTEGER},
-      product = #{record.product,jdbcType=VARCHAR},
       number = #{record.number,jdbcType=INTEGER},
+      contractId = #{record.contractid,jdbcType=INTEGER},
+      product = #{record.product,jdbcType=INTEGER},
       unitPrice = #{record.unitprice,jdbcType=DOUBLE}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -190,23 +192,21 @@
         contractId = #{contractid,jdbcType=INTEGER},
       </if>
       <if test="product != null">
-        product = #{product,jdbcType=VARCHAR},
-      </if>
-      <if test="number != null">
-        number = #{number,jdbcType=INTEGER},
+        product = #{product,jdbcType=INTEGER},
       </if>
       <if test="unitprice != null">
         unitPrice = #{unitprice,jdbcType=DOUBLE},
       </if>
     </set>
     where detailsId = #{detailsid,jdbcType=INTEGER}
+      and number = #{number,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Orderdetails">
     update orderDetails
     set contractId = #{contractid,jdbcType=INTEGER},
-      product = #{product,jdbcType=VARCHAR},
-      number = #{number,jdbcType=INTEGER},
+      product = #{product,jdbcType=INTEGER},
       unitPrice = #{unitprice,jdbcType=DOUBLE}
     where detailsId = #{detailsid,jdbcType=INTEGER}
+      and number = #{number,jdbcType=INTEGER}
   </update>
 </mapper>

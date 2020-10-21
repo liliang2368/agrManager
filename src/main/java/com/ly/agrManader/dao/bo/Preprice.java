@@ -1,6 +1,5 @@
 package com.ly.agrManader.dao.bo;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Preprice {
@@ -12,7 +11,7 @@ public class Preprice {
 
     private String wholesalername;
 
-    private BigDecimal marketprice;
+    private Double marketprice;
 
     private String marketname;
 
@@ -52,11 +51,11 @@ public class Preprice {
         this.wholesalername = wholesalername;
     }
 
-    public BigDecimal getMarketprice() {
+    public Double getMarketprice() {
         return marketprice;
     }
 
-    public void setMarketprice(BigDecimal marketprice) {
+    public void setMarketprice(Double marketprice) {
         this.marketprice = marketprice;
     }
 

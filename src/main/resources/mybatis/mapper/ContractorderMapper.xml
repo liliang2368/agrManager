@@ -8,8 +8,8 @@
     <result column="finAmount" jdbcType="INTEGER" property="finamount" />
     <result column="paymentState" jdbcType="INTEGER" property="paymentstate" />
     <result column="qualityState" jdbcType="INTEGER" property="qualitystate" />
-    <result column="warehous" jdbcType="VARCHAR" property="warehous" />
-    <result column="orderProcess" jdbcType="VARCHAR" property="orderprocess" />
+    <result column="warehous" jdbcType="INTEGER" property="warehous" />
+    <result column="orderProcess" jdbcType="INTEGER" property="orderprocess" />
     <result column="customerId" jdbcType="INTEGER" property="customerid" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
   </resultMap>
@@ -113,7 +113,7 @@
       time)
     values (#{contractid,jdbcType=INTEGER}, #{examine,jdbcType=INTEGER}, #{preamount,jdbcType=INTEGER}, 
       #{finamount,jdbcType=INTEGER}, #{paymentstate,jdbcType=INTEGER}, #{qualitystate,jdbcType=INTEGER}, 
-      #{warehous,jdbcType=VARCHAR}, #{orderprocess,jdbcType=VARCHAR}, #{customerid,jdbcType=INTEGER}, 
+      #{warehous,jdbcType=INTEGER}, #{orderprocess,jdbcType=INTEGER}, #{customerid,jdbcType=INTEGER}, 
       #{time,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Contractorder">
@@ -170,10 +170,10 @@
         #{qualitystate,jdbcType=INTEGER},
       </if>
       <if test="warehous != null">
-        #{warehous,jdbcType=VARCHAR},
+        #{warehous,jdbcType=INTEGER},
       </if>
       <if test="orderprocess != null">
-        #{orderprocess,jdbcType=VARCHAR},
+        #{orderprocess,jdbcType=INTEGER},
       </if>
       <if test="customerid != null">
         #{customerid,jdbcType=INTEGER},
@@ -211,10 +211,10 @@
         qualityState = #{record.qualitystate,jdbcType=INTEGER},
       </if>
       <if test="record.warehous != null">
-        warehous = #{record.warehous,jdbcType=VARCHAR},
+        warehous = #{record.warehous,jdbcType=INTEGER},
       </if>
       <if test="record.orderprocess != null">
-        orderProcess = #{record.orderprocess,jdbcType=VARCHAR},
+        orderProcess = #{record.orderprocess,jdbcType=INTEGER},
       </if>
       <if test="record.customerid != null">
         customerId = #{record.customerid,jdbcType=INTEGER},
@@ -235,8 +235,8 @@
       finAmount = #{record.finamount,jdbcType=INTEGER},
       paymentState = #{record.paymentstate,jdbcType=INTEGER},
       qualityState = #{record.qualitystate,jdbcType=INTEGER},
-      warehous = #{record.warehous,jdbcType=VARCHAR},
-      orderProcess = #{record.orderprocess,jdbcType=VARCHAR},
+      warehous = #{record.warehous,jdbcType=INTEGER},
+      orderProcess = #{record.orderprocess,jdbcType=INTEGER},
       customerId = #{record.customerid,jdbcType=INTEGER},
       time = #{record.time,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
@@ -262,10 +262,10 @@
         qualityState = #{qualitystate,jdbcType=INTEGER},
       </if>
       <if test="warehous != null">
-        warehous = #{warehous,jdbcType=VARCHAR},
+        warehous = #{warehous,jdbcType=INTEGER},
       </if>
       <if test="orderprocess != null">
-        orderProcess = #{orderprocess,jdbcType=VARCHAR},
+        orderProcess = #{orderprocess,jdbcType=INTEGER},
       </if>
       <if test="customerid != null">
         customerId = #{customerid,jdbcType=INTEGER},
@@ -283,8 +283,8 @@
       finAmount = #{finamount,jdbcType=INTEGER},
       paymentState = #{paymentstate,jdbcType=INTEGER},
       qualityState = #{qualitystate,jdbcType=INTEGER},
-      warehous = #{warehous,jdbcType=VARCHAR},
-      orderProcess = #{orderprocess,jdbcType=VARCHAR},
+      warehous = #{warehous,jdbcType=INTEGER},
+      orderProcess = #{orderprocess,jdbcType=INTEGER},
       customerId = #{customerid,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP}
     where contractId = #{contractid,jdbcType=INTEGER}

@@ -98,7 +98,7 @@ public class BaseResponse<T> implements Serializable {
         return result;
     }
 
-    public void setResult(pageResult<Purchase> result) {
+    public void setResult(pageResult<T> result) {
         this.result = (T) result;
     }
 

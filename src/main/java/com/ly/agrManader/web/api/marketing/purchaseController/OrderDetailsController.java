@@ -76,7 +76,7 @@ public class OrderDetailsController {
 
     @ApiOperation(value = "删除采购商品单", httpMethod = "POST", consumes = "application/json")
     @ApiResponse(code = 200, message = "success", response = String.class)
-    @PostMapping(value = "/v1.0/updatepurchase")
+    @PostMapping(value = "/v1.0/deletePurchase")
     public BaseResponse<Integer> deletepurchaset(@RequestBody orderdetailRequest request) {
         logger.info("purchaseController#updatepurchaset request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);

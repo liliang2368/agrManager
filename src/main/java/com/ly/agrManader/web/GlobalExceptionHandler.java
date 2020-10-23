@@ -31,6 +31,11 @@ public class GlobalExceptionHandler {
 	public JsonModel doHandleRuntimeException(RuntimeException e) {
 		System.out.println("GlobalExceptionHandler.doHandleRuntimeException");
 		e.printStackTrace();
+
+
+
+
+
 		return JsonModel.fail(e);
 	}
 	

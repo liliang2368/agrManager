@@ -2,7 +2,6 @@ package com.ly.agrManader.server.Interface;
 
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.web.api.marketing.request.orderdetailRequest;
-import com.ly.agrManader.web.api.marketing.request.purchaseRequest;
 
 /**
  * @author jiangzhiwen

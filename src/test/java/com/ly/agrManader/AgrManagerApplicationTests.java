@@ -10,4 +10,9 @@ class AgrManagerApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testInsertcommodity(){
+		System.out.println("hello");
+	}
+
 }

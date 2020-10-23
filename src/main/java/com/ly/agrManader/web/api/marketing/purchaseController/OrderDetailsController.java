@@ -32,7 +32,7 @@ public class OrderDetailsController {
     @ApiResponse(code = 200, message = "success", response = String.class)
     @PostMapping(value = "/v1.0/insertpurchase")
     public BaseResponse<Integer> insertpurchaset(@RequestBody orderdetailRequest request) {
-        logger.info("purchaseController#insertpurchaset request:{}", "");
+        logger.info("purchaseController#insertpPurchaset request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
         try {
             return orderDetailBusiv.insertThisCommodityToOrderDetails(request);
@@ -53,7 +53,7 @@ public class OrderDetailsController {
 
     @ApiOperation(value = "修改采购商品单", httpMethod = "POST", consumes = "application/json")
     @ApiResponse(code = 200, message = "success", response = String.class)
-    @PostMapping(value = "/v1.0/updatepurchase")
+    @PostMapping(value = "/v1.0/updatePurchase")
     public BaseResponse<Integer> updatepurchaset(@RequestBody orderdetailRequest request) {
         logger.info("purchaseController#updatepurchaset request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
@@ -97,5 +97,26 @@ public class OrderDetailsController {
 
     }
 
+    @ApiOperation(value = "删除采购商品单", httpMethod = "POST", consumes = "application/json")
+    @ApiResponse(code = 200, message = "success", response = String.class)
+    @PostMapping(value = "/v1.0/deletePurchase")
+    public BaseResponse<Integer> deleteAllOrderDetailsWithContractId(@RequestBody orderdetailRequest request) {
+        logger.info("purchaseController#updatepurchaset request:{}", "");
+        BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
+        try {
+            return orderDetailBusiv.deleteThisCommodityToOrderDetails(request);
+        } catch (BusinessException | SystemException e) {
+            response.setSuccess(false);
+            response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);
+            response.setResultMessage(BusinessConstants.BUSI_FAILURE_MESSAGE);
+            logger.error("StoreSaleDevelopRptController#saveStoreSaleDevelopRptByStoresCodes 发生业务或系统错误：{}" + e.getMessage(), e);
+        } catch (Exception e) {
+            response.setSuccess(false);
+            response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);
+            response.setResultMessage(BusinessConstants.BUSI_FAILURE_MESSAGE);
+            logger.error("StoreSaleDevelopRptController#saveStoreSaleDevelopRptByStoresCodes 发生错误：{}" + e.getMessage(), e);
+        }
+        return response;
+    }
 
 }

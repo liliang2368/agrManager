@@ -1,14 +1,20 @@
 package com.ly.agrManader.web.api.marketing.request;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 /**
  * @author jiangzhiwen
  * @version 1.0
  * @date 2020/10/22 12:36 上午
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
+@ApiModel(value = "订单详细商品请求对象", description = "订单详细商品")
 public class orderdetailRequest {
+    @ApiModelProperty(value = "合同外键", name = "contractid")
     private Integer contractid;
-
+    @ApiModelProperty(value = "商品", name = "product")
     private Integer product;
 
     private Integer number;

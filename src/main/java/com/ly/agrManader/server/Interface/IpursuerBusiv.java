@@ -6,7 +6,7 @@ import com.ly.agrManader.web.api.marketing.request.pursuerRequest;
 import com.ly.agrManader.web.api.marketing.vo.pursuerVO;
 
 public interface IpursuerBusiv {
-
-
     BaseResponse<pageResult<pursuerVO>> pageQueryPurchse(pursuerRequest request);
+
+
 }

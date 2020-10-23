@@ -16,7 +16,7 @@ spring:
       prefix: classpath:/templates/
       suffix: .html
   datasource:
-    url: jdbc:mysql://112.124.13.227:3306/agr-produce-manager?serverTimezone=GMT%2B8&characterEncoding=utf8
+    url: jdbc:mysql://112.124.13.227:3306/agr-procuce-manager?serverTimezone=GMT%2B8&characterEncoding=utf8
     username: root
     password: a
     driver-class-name: com.mysql.jdbc.Driver

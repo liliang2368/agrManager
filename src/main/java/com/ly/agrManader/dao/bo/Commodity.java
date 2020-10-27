@@ -1,5 +1,7 @@
 package com.ly.agrManader.dao.bo;
 
+import java.math.BigDecimal;
+
 public class Commodity {
     private Integer commodityid;
 
@@ -24,6 +26,8 @@ public class Commodity {
     private Double price;
 
     private Integer grade;
+
+    private BigDecimal costprice;
 
     public Integer getCommodityid() {
         return commodityid;
@@ -119,5 +123,13 @@ public class Commodity {
 
     public void setGrade(Integer grade) {
         this.grade = grade;
+    }
+
+    public BigDecimal getCostprice() {
+        return costprice;
+    }
+
+    public void setCostprice(BigDecimal costprice) {
+        this.costprice = costprice;
     }
 }

@@ -1,5 +1,6 @@
 package com.ly.agrManader.dao.bo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -851,6 +852,66 @@ public class CommodityExample {
 
         public Criteria andGradeNotBetween(Integer value1, Integer value2) {
             addCriterion("grade not between", value1, value2, "grade");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceIsNull() {
+            addCriterion("costprice is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceIsNotNull() {
+            addCriterion("costprice is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceEqualTo(BigDecimal value) {
+            addCriterion("costprice =", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceNotEqualTo(BigDecimal value) {
+            addCriterion("costprice <>", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceGreaterThan(BigDecimal value) {
+            addCriterion("costprice >", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("costprice >=", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceLessThan(BigDecimal value) {
+            addCriterion("costprice <", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("costprice <=", value, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceIn(List<BigDecimal> values) {
+            addCriterion("costprice in", values, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceNotIn(List<BigDecimal> values) {
+            addCriterion("costprice not in", values, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("costprice between", value1, value2, "costprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andCostpriceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("costprice not between", value1, value2, "costprice");
             return (Criteria) this;
         }
     }

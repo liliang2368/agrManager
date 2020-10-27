@@ -1,8 +1,5 @@
 package com.ly.agrManader.server.impl;
 
-import com.ly.agrManader.dao.Interface.OrderdetailsMapper;
-import com.ly.agrManader.dao.bo.Orderdetails;
-import com.ly.agrManader.dao.bo.OrderdetailsExample;
 import com.ly.agrManader.server.Interface.OrderDetailBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;

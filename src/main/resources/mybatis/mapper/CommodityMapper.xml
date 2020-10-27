@@ -14,6 +14,7 @@
     <result column="recommendStock" jdbcType="INTEGER" property="recommendstock" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="costprice" jdbcType="DECIMAL" property="costprice" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,7 +76,8 @@
   </sql>
   <sql id="Base_Column_List">
     commodityId, agriculturalProductsId, commodityName, measurementMethod, storageMethod, 
-    qualityGuaranteePeriod, minStock, stock, maxStock, recommendStock, price, grade
+    qualityGuaranteePeriod, minStock, stock, maxStock, recommendStock, price, grade, 
+    costprice
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample" resultMap="BaseResultMap">
     select
@@ -113,12 +115,12 @@
       commodityName, measurementMethod, storageMethod, 
       qualityGuaranteePeriod, minStock, stock, 
       maxStock, recommendStock, price, 
-      grade)
+      grade, costprice)
     values (#{commodityid,jdbcType=INTEGER}, #{agriculturalproductsid,jdbcType=INTEGER}, 
       #{commodityname,jdbcType=VARCHAR}, #{measurementmethod,jdbcType=VARCHAR}, #{storagemethod,jdbcType=VARCHAR}, 
       #{qualityguaranteeperiod,jdbcType=INTEGER}, #{minstock,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, 
       #{maxstock,jdbcType=INTEGER}, #{recommendstock,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, 
-      #{grade,jdbcType=INTEGER})
+      #{grade,jdbcType=INTEGER}, #{costprice,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Commodity">
     insert into commodity
@@ -159,6 +161,9 @@
       <if test="grade != null">
         grade,
       </if>
+      <if test="costprice != null">
+        costprice,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="commodityid != null">
@@ -196,6 +201,9 @@
       </if>
       <if test="grade != null">
         #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="costprice != null">
+        #{costprice,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -244,6 +252,9 @@
       <if test="record.grade != null">
         grade = #{record.grade,jdbcType=INTEGER},
       </if>
+      <if test="record.costprice != null">
+        costprice = #{record.costprice,jdbcType=DECIMAL},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -262,7 +273,8 @@
       maxStock = #{record.maxstock,jdbcType=INTEGER},
       recommendStock = #{record.recommendstock,jdbcType=INTEGER},
       price = #{record.price,jdbcType=DOUBLE},
-      grade = #{record.grade,jdbcType=INTEGER}
+      grade = #{record.grade,jdbcType=INTEGER},
+      costprice = #{record.costprice,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -303,6 +315,9 @@
       <if test="grade != null">
         grade = #{grade,jdbcType=INTEGER},
       </if>
+      <if test="costprice != null">
+        costprice = #{costprice,jdbcType=DECIMAL},
+      </if>
     </set>
     where commodityId = #{commodityid,jdbcType=INTEGER}
   </update>
@@ -318,7 +333,8 @@
       maxStock = #{maxstock,jdbcType=INTEGER},
       recommendStock = #{recommendstock,jdbcType=INTEGER},
       price = #{price,jdbcType=DOUBLE},
-      grade = #{grade,jdbcType=INTEGER}
+      grade = #{grade,jdbcType=INTEGER},
+      costprice = #{costprice,jdbcType=DECIMAL}
     where commodityId = #{commodityid,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -165,6 +165,66 @@ public class PrepriceExample {
             return (Criteria) this;
         }
 
+        public Criteria andCommodityidIsNull() {
+            addCriterion("commodityId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidIsNotNull() {
+            addCriterion("commodityId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidEqualTo(Integer value) {
+            addCriterion("commodityId =", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotEqualTo(Integer value) {
+            addCriterion("commodityId <>", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidGreaterThan(Integer value) {
+            addCriterion("commodityId >", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("commodityId >=", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidLessThan(Integer value) {
+            addCriterion("commodityId <", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidLessThanOrEqualTo(Integer value) {
+            addCriterion("commodityId <=", value, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidIn(List<Integer> values) {
+            addCriterion("commodityId in", values, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotIn(List<Integer> values) {
+            addCriterion("commodityId not in", values, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidBetween(Integer value1, Integer value2) {
+            addCriterion("commodityId between", value1, value2, "commodityid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommodityidNotBetween(Integer value1, Integer value2) {
+            addCriterion("commodityId not between", value1, value2, "commodityid");
+            return (Criteria) this;
+        }
+
         public Criteria andMeasurementmethodIsNull() {
             addCriterion("measurementMethod is null");
             return (Criteria) this;

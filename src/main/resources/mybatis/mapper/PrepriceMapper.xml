@@ -3,6 +3,7 @@
 <mapper namespace="com.ly.agrManader.dao.Interface.PrepriceMapper">
   <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Preprice">
     <id column="preProductId" jdbcType="INTEGER" property="preproductid" />
+    <result column="commodityId" jdbcType="INTEGER" property="commodityid" />
     <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
     <result column="tradePrice" jdbcType="DOUBLE" property="tradeprice" />
     <result column="wholesalerName" jdbcType="VARCHAR" property="wholesalername" />
@@ -70,8 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    preProductId, measurementMethod, tradePrice, wholesalerName, marketPrice, marketName, 
-    time, inputTime
+    preProductId, commodityId, measurementMethod, tradePrice, wholesalerName, marketPrice, 
+    marketName, time, inputTime
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.PrepriceExample" resultMap="BaseResultMap">
     select
@@ -105,11 +106,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Preprice">
-    insert into prePrice (preProductId, measurementMethod, 
+    insert into prePrice (preProductId, commodityId, measurementMethod, 
       tradePrice, wholesalerName, marketPrice, 
       marketName, time, inputTime
       )
-    values (#{preproductid,jdbcType=INTEGER}, #{measurementmethod,jdbcType=VARCHAR}, 
+    values (#{preproductid,jdbcType=INTEGER}, #{commodityid,jdbcType=INTEGER}, #{measurementmethod,jdbcType=VARCHAR}, 
       #{tradeprice,jdbcType=DOUBLE}, #{wholesalername,jdbcType=VARCHAR}, #{marketprice,jdbcType=DOUBLE}, 
       #{marketname,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{inputtime,jdbcType=TIMESTAMP}
       )
@@ -119,6 +120,9 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="preproductid != null">
         preProductId,
+      </if>
+      <if test="commodityid != null">
+        commodityId,
       </if>
       <if test="measurementmethod != null">
         measurementMethod,
@@ -145,6 +149,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="preproductid != null">
         #{preproductid,jdbcType=INTEGER},
+      </if>
+      <if test="commodityid != null">
+        #{commodityid,jdbcType=INTEGER},
       </if>
       <if test="measurementmethod != null">
         #{measurementmethod,jdbcType=VARCHAR},
@@ -181,6 +188,9 @@
       <if test="record.preproductid != null">
         preProductId = #{record.preproductid,jdbcType=INTEGER},
       </if>
+      <if test="record.commodityid != null">
+        commodityId = #{record.commodityid,jdbcType=INTEGER},
+      </if>
       <if test="record.measurementmethod != null">
         measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
       </if>
@@ -210,6 +220,7 @@
   <update id="updateByExample" parameterType="map">
     update prePrice
     set preProductId = #{record.preproductid,jdbcType=INTEGER},
+      commodityId = #{record.commodityid,jdbcType=INTEGER},
       measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
       tradePrice = #{record.tradeprice,jdbcType=DOUBLE},
       wholesalerName = #{record.wholesalername,jdbcType=VARCHAR},
@@ -224,6 +235,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Preprice">
     update prePrice
     <set>
+      <if test="commodityid != null">
+        commodityId = #{commodityid,jdbcType=INTEGER},
+      </if>
       <if test="measurementmethod != null">
         measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
       </if>
@@ -250,7 +264,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Preprice">
     update prePrice
-    set measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+    set commodityId = #{commodityid,jdbcType=INTEGER},
+      measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
       tradePrice = #{tradeprice,jdbcType=DOUBLE},
       wholesalerName = #{wholesalername,jdbcType=VARCHAR},
       marketPrice = #{marketprice,jdbcType=DOUBLE},

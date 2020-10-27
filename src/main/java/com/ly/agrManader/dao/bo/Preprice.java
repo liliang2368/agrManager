@@ -5,6 +5,8 @@ import java.util.Date;
 public class Preprice {
     private Integer preproductid;
 
+    private Integer commodityid;
+
     private String measurementmethod;
 
     private Double tradeprice;
@@ -25,6 +27,14 @@ public class Preprice {
 
     public void setPreproductid(Integer preproductid) {
         this.preproductid = preproductid;
+    }
+
+    public Integer getCommodityid() {
+        return commodityid;
+    }
+
+    public void setCommodityid(Integer commodityid) {
+        this.commodityid = commodityid;
     }
 
     public String getMeasurementmethod() {

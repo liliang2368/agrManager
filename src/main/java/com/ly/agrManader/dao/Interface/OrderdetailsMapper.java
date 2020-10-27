@@ -4,9 +4,7 @@ import com.ly.agrManader.dao.bo.Orderdetails;
 import com.ly.agrManader.dao.bo.OrderdetailsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface OrderdetailsMapper {
     long countByExample(OrderdetailsExample example);
 

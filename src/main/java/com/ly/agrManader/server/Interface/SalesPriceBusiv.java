@@ -1,0 +1,27 @@
+package com.ly.agrManader.server.Interface;
+
+import com.ly.agrManader.util.BaseResponse;
+import com.ly.agrManader.web.api.marketing.purchaseController.SalesPriceController;
+import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
+import com.ly.agrManader.web.api.marketing.request.orderdetailRequest;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author jiangzhiwen
+ * @version 1.0
+ * @date 2020/10/27 12:15 上午
+ */
+
+public interface SalesPriceBusiv {
+
+    BaseResponse<Integer> addrSalesPriceThisCommodityDetails(SalesPriceRequest request);
+
+    BaseResponse<Integer> examineSalesPriceThisCommodityDetails(SalesPriceRequest request);
+
+    BaseResponse<Integer> executeSalesPriceSalesPriceThisCommodityDetails(SalesPriceRequest request);
+
+    BaseResponse<List<SalesPriceRequest>> selectSalesPriceSalesPriceAllCommodityDetails(SalesPriceRequest request);
+
+}

@@ -12,11 +12,14 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ApiModel(value = "订单详细商品请求对象", description = "订单详细商品")
 public class orderdetailRequest {
+
     @ApiModelProperty(value = "合同外键", name = "contractid")
     private Integer contractid;
-    @ApiModelProperty(value = "商品", name = "product")
+
+    @ApiModelProperty(value = "商品编号", name = "product")
     private Integer product;
 
+    @ApiModelProperty(value = "数量", name = "number")
     private Integer number;
 
     public Integer getContractid() {

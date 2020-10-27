@@ -1,9 +1,15 @@
-package com.ly.agrManader.dao.bo;
+package com.ly.agrManader.web.api.marketing.request;
 
 import java.util.Date;
 
-public class Contractorder {
-    private Integer contractId;
+/**
+ * @author jiangzhiwen
+ * @version 1.0
+ * @date 2020/10/23 3:23 下午
+ */
+
+public class ContractRequest {
+    private Integer contractid;
 
     private Integer examine;
 
@@ -24,11 +30,11 @@ public class Contractorder {
     private Date time;
 
     public Integer getContractid() {
-        return contractId;
+        return contractid;
     }
 
     public void setContractid(Integer contractid) {
-        this.contractId = contractid;
+        this.contractid = contractid;
     }
 
     public Integer getExamine() {
@@ -101,21 +107,5 @@ public class Contractorder {
 
     public void setTime(Date time) {
         this.time = time;
-    }
-
-    @Override
-    public String toString() {
-        return "Contractorder{" +
-                "contractid=" + contractId +
-                ", examine=" + examine +
-                ", preamount=" + preamount +
-                ", finamount=" + finamount +
-                ", paymentstate=" + paymentstate +
-                ", qualitystate=" + qualitystate +
-                ", warehous=" + warehous +
-                ", orderprocess=" + orderprocess +
-                ", customerid=" + customerid +
-                ", time=" + time +
-                '}';
     }
 }

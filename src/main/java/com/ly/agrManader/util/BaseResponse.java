@@ -2,6 +2,7 @@ package com.ly.agrManader.util;
 
 import java.io.Serializable;
 
+import com.ly.agrManader.dao.bo.Commodity;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
@@ -98,7 +99,7 @@ public class BaseResponse<T> implements Serializable {
         return result;
     }
 
-    public void setResult(pageResult<Purchase> result) {
+    public void setResult(pageResult<Commodity> result) {
         this.result = (T) result;
     }
 

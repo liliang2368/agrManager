@@ -76,3 +76,4 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/*/*.xml
   type-aliases-package: com.ly.agrMander.dao
+

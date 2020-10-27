@@ -2,9 +2,13 @@ package com.ly.agrManader.dao.Interface;
 
 import com.ly.agrManader.dao.bo.Preprice;
 import com.ly.agrManader.dao.bo.PrepriceExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface PrepriceMapper {
     long countByExample(PrepriceExample example);
 
@@ -27,4 +31,6 @@ public interface PrepriceMapper {
     int updateByPrimaryKeySelective(Preprice record);
 
     int updateByPrimaryKey(Preprice record);
+
+
 }

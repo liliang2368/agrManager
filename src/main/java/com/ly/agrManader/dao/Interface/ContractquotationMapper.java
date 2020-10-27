@@ -33,6 +33,7 @@ public interface ContractquotationMapper {
 
     int updateByPrimaryKey(Contractquotation record);
 
+
     List<SalesPriceRequest> selectSalesPriceSalesPriceAllCommodityDetails(SalesPriceRequest salesPriceRequest);
 
     Contractquotation selectMaxContractid();

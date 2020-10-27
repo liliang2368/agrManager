@@ -54,17 +54,17 @@ public class SalesPriceBusivImpl implements SalesPriceBusiv {
         }
 
         //销售定价所有的信息
+        Date date=new Date();
         Preprice preprice = new Preprice();
         preprice.setPreproductid(maxId);
         preprice.setInputtime(request.getInputtime());
         preprice.setMarketname(request.getMarketname());
         preprice.setMarketprice(request.getMarketprice());
         preprice.setMeasurementmethod(request.getMeasurementmethod());
-        preprice.setTime(new Date());
+        preprice.setTime(date);
         preprice.setWholesalername(request.getWholesalername());
         preprice.setTradeprice(request.getTradeprice());
         //-------缺少商品设置
-
 
         int insertprepriceResult = prepriceMapper.insert(preprice);
 
@@ -78,9 +78,10 @@ public class SalesPriceBusivImpl implements SalesPriceBusiv {
         int insertcontractquotationResult = contractquotationMapper.insert(contractquotation);
         if (preprice.getPreproductid().equals(contractquotation.getContractid())) {
             return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1);
-
         }
-        return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 0);
+
+
+        return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 0,1);
 
     }
 
@@ -136,9 +137,8 @@ public class SalesPriceBusivImpl implements SalesPriceBusiv {
      */
     @Override
     public BaseResponse<List<SalesPriceRequest>> selectSalesPriceSalesPriceAllCommodityDetails(SalesPriceRequest request) {
-
-        List<SalesPriceRequest> Result = contractquotationMapper.selectSalesPriceSalesPriceAllCommodityDetails(request);
-
-        return new BaseResponse<List<SalesPriceRequest>>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, Result);
+        List<SalesPriceRequest> result = contractquotationMapper.selectSalesPriceSalesPriceAllCommodityDetails(request);
+        System.err.println(result);
+        return new BaseResponse<List<SalesPriceRequest>>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1,result);
     }
 }

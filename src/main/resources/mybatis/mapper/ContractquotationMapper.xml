@@ -15,12 +15,12 @@
   </select>
 
 
-    <select id="selectSalesPriceSalesPriceAllCommodityDetails" resultType="com.ly.agrManader.dao.bo.Contractquotation"
+    <select id="selectSalesPriceSalesPriceAllCommodityDetails" resultType="com.ly.agrManader.web.api.marketing.request.SalesPriceRequest"
             parameterType="com.ly.agrManader.web.api.marketing.request.SalesPriceRequest">
         SELECT * from contractQuotation A LEFT JOIN prePrice B on A.contractId=B.preProductId
         <where>
-            <if test="salesPriceRequest.stats !=null">
-                and A.stats=#{salesPriceRequest.stats}
+            <if test="stats !=null">
+                and A.stats=#{stats}
             </if>
         </where>
     </select>

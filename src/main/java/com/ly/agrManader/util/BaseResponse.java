@@ -33,12 +33,12 @@ public class BaseResponse<T> implements Serializable {
     /**
      * 用于异常时，存放堆栈信息
      */
-    private Object info="";
+    private Object info = "";
 
     /**
      * 业务数据
      */
-    private T result=null;
+    private T result = null;
 
     /**
      * 默认构造函数
@@ -49,8 +49,9 @@ public class BaseResponse<T> implements Serializable {
 
     /**
      * 构造函数
-     * @param success 是否成功
-     * @param resultCode 是否成功代码
+     *
+     * @param success       是否成功
+     * @param resultCode    是否成功代码
      * @param resultMessage 是否成功信息
      */
     public BaseResponse(boolean success, String resultCode, String resultMessage) {
@@ -63,10 +64,11 @@ public class BaseResponse<T> implements Serializable {
 
     /**
      * 构造函数
-     * @param success 是否成功
-     * @param resultCode 是否成功代码
+     *
+     * @param success       是否成功
+     * @param resultCode    是否成功代码
      * @param resultMessage 是否成功信息
-     * @param info 扩展信息 ，异常时存异常储堆栈信息
+     * @param info          扩展信息 ，异常时存异常储堆栈信息
      */
     public BaseResponse(boolean success, String resultCode, String resultMessage, Object info) {
         super();
@@ -78,13 +80,14 @@ public class BaseResponse<T> implements Serializable {
 
     /**
      * 构造函数
-     * @param success 是否成功
-     * @param resultCode 是否成功代码
+     *
+     * @param success       是否成功
+     * @param resultCode    是否成功代码
      * @param resultMessage 是否成功信息
-     * @param info 扩展信息 ，异常时存异常储堆栈信息
-     * @param result 业务执行结果
+     * @param info          扩展信息 ，异常时存异常储堆栈信息
+     * @param result        业务执行结果
      */
-    public BaseResponse( boolean success, String resultCode, String resultMessage, Object info,T result) {
+    public BaseResponse(boolean success, String resultCode, String resultMessage, Object info, T result) {
         super();
         this.success = success;
         this.resultCode = resultCode;
@@ -92,7 +95,6 @@ public class BaseResponse<T> implements Serializable {
         this.info = info;
         this.result = result;
     }
-
 
 
     public T getResult() {

@@ -30,7 +30,7 @@ public class PurchaseControle {
 
     @ApiOperation(value = "添加销售定价", httpMethod = "POST", consumes = "application/json")
     @ApiResponse(code = 200, message = "success", response = String.class)
-    @PostMapping(value = "/v1.0/addSalesPrice")
+    @PostMapping(value = "/v1.0/addPurchase")
     public BaseResponse<Integer> addPurchase(@RequestBody pursuerRequest request) {
         logger.info("PurchaseControle#addPurchase request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);

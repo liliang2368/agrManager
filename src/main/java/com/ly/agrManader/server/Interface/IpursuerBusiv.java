@@ -5,6 +5,8 @@ import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.pageResult;
 import com.ly.agrManader.web.management.request.pursuerRequest;
 import com.ly.agrManader.web.management.vo.pursuerVO;
+import org.springframework.stereotype.Service;
+
 
 public interface IpursuerBusiv {
 

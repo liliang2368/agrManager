@@ -61,5 +61,107 @@ public class SalesPriceRequest {
     @ApiModelProperty(value = "录入时间", name = "inputtime")
     private Date inputtime;
 
+    public void setContractid(Integer contractid) {
+        this.contractid = contractid;
+    }
 
+    public void setCustomerdemand(String customerdemand) {
+        this.customerdemand = customerdemand;
+    }
+
+    public void setSolution(String solution) {
+        this.solution = solution;
+    }
+
+    public void setFinprice(Double finprice) {
+        this.finprice = finprice;
+    }
+
+    public void setStats(Integer stats) {
+        this.stats = stats;
+    }
+
+    public void setPreproductid(Integer preproductid) {
+        this.preproductid = preproductid;
+    }
+
+    public void setMeasurementmethod(String measurementmethod) {
+        this.measurementmethod = measurementmethod;
+    }
+
+    public void setTradeprice(Double tradeprice) {
+        this.tradeprice = tradeprice;
+    }
+
+    public void setWholesalername(String wholesalername) {
+        this.wholesalername = wholesalername;
+    }
+
+    public void setMarketprice(Double marketprice) {
+        this.marketprice = marketprice;
+    }
+
+    public void setMarketname(String marketname) {
+        this.marketname = marketname;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public void setInputtime(Date inputtime) {
+        this.inputtime = inputtime;
+    }
+
+    public Integer getContractid() {
+        return contractid;
+    }
+
+    public String getCustomerdemand() {
+        return customerdemand;
+    }
+
+    public String getSolution() {
+        return solution;
+    }
+
+    public Double getFinprice() {
+        return finprice;
+    }
+
+    public Integer getStats() {
+        return stats;
+    }
+
+    public Integer getPreproductid() {
+        return preproductid;
+    }
+
+    public String getMeasurementmethod() {
+        return measurementmethod;
+    }
+
+    public Double getTradeprice() {
+        return tradeprice;
+    }
+
+    public String getWholesalername() {
+        return wholesalername;
+    }
+
+    public Double getMarketprice() {
+        return marketprice;
+    }
+
+    public String getMarketname() {
+        return marketname;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public Date getInputtime() {
+        return inputtime;
+    }
 }

@@ -11,7 +11,7 @@ import com.ly.agrManader.server.impl.SalesPriceBusivImpl;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.BusinessException;
-import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
+import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

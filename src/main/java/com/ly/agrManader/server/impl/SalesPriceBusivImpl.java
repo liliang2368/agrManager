@@ -7,7 +7,7 @@ import com.ly.agrManader.dao.bo.*;
 import com.ly.agrManader.server.Interface.SalesPriceBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
-import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
+import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

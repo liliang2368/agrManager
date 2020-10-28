@@ -5,7 +5,7 @@ import com.ly.agrManader.dao.bo.ContractquotationExample;
 
 import java.util.List;
 
-import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
+import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

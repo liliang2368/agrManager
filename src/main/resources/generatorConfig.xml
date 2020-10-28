@@ -49,7 +49,7 @@
                 targetPackage="com.ly.agrManader.dao.Interface"
                 targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java"
                 type="XMLMAPPER"/>
-        <table tableName="%" enableCountByExample="true"
+        <table tableName="purchase" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="false"/>
     </context>

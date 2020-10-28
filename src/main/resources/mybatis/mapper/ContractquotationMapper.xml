@@ -15,8 +15,8 @@
   </select>
 
 
-    <select id="selectSalesPriceSalesPriceAllCommodityDetails" resultType="com.ly.agrManader.web.api.marketing.request.SalesPriceRequest"
-            parameterType="com.ly.agrManader.web.api.marketing.request.SalesPriceRequest">
+    <select id="selectSalesPriceSalesPriceAllCommodityDetails" resultType="com.ly.agrManader.web.management.request.SalesPriceRequest"
+            parameterType="com.ly.agrManader.web.management.request.SalesPriceRequest">
         SELECT * from contractQuotation A LEFT JOIN prePrice B on A.contractId=B.preProductId
         <where>
             <if test="stats !=null">

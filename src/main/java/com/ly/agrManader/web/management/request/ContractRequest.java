@@ -1,4 +1,4 @@
-package com.ly.agrManader.web.api.marketing.request;
+package com.ly.agrManader.web.management.request;
 
 import java.util.Date;
 

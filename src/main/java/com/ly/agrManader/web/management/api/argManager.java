@@ -1,4 +1,4 @@
-package com.ly.agrManader.web.api.marketing.Pursuercontroller;
+package com.ly.agrManader.web.management.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

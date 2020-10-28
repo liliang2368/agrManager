@@ -1,4 +1,4 @@
-package com.ly.agrManader.web.api.marketing.purchaseController;
+package com.ly.agrManader.web.management.api;
 
 /**
  * @author jiangzhiwen
@@ -12,6 +12,7 @@ import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.BusinessException;
 import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.omg.CORBA.SystemException;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -34,6 +36,8 @@ import java.util.List;
  * 备案
  * 状态：初始化0 经理审核 1 审核不通过为2  执行 3
  */
+@Api(value = "/api/CheckBillDtl", tags = "销售定价")
+@RestController
 public class SalesPriceController {
 
     @Autowired
@@ -48,9 +52,7 @@ public class SalesPriceController {
         logger.info("SalesPriceController#addSalesPrice request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
         try {
-
             return salesPriceBusiv.addrSalesPriceThisCommodityDetails(request);
-
         } catch (BusinessException | SystemException e) {
             response.setSuccess(false);
             response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);

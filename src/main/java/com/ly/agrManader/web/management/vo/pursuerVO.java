@@ -1,4 +1,4 @@
-package com.ly.agrManader.web.api.marketing.vo;
+package com.ly.agrManader.web.management.vo;
 
 public class pursuerVO {
 

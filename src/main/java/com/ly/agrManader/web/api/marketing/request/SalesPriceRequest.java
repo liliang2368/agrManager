@@ -38,28 +38,28 @@ public class SalesPriceRequest {
      * 调研到的信息
      */
     @ApiModelProperty(value = "市场调研ID", name = "preproductid")
-    private Integer preproductid;
+    private Integer preProductId;
 
     @ApiModelProperty(value = "计量方式", name = "measurementmethod")
-    private String measurementmethod;
+    private String meaSurementMethod;
 
     @ApiModelProperty(value = "市场批发商价格", name = "tradeprice")
-    private Double tradeprice;
+    private Double tradePrice;
 
     @ApiModelProperty(value = "批发商名称", name = "wholesalername")
-    private String wholesalername;
+    private String wholeSalerName;
 
     @ApiModelProperty(value = "农贸市场价格", name = "marketprice")
-    private Double marketprice;
+    private Double marketPrice;
 
     @ApiModelProperty(value = "农贸市场名字", name = "marketprice")
-    private String marketname;
+    private String marketName;
 
     @ApiModelProperty(value = "调研时间", name = "time")
     private Date time;
 
     @ApiModelProperty(value = "录入时间", name = "inputtime")
-    private Date inputtime;
+    private Date inputTime;
 
 
 }

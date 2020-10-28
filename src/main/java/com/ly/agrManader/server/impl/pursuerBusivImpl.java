@@ -6,14 +6,12 @@ import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.pageResult;
-import com.ly.agrManader.web.management.api.PurchaseControle;
 import com.ly.agrManader.web.management.request.pursuerRequest;
 import com.ly.agrManader.web.management.vo.pursuerVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class pursuerBusivImpl implements IpursuerBusiv {

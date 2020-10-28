@@ -5,7 +5,6 @@ import com.ly.agrManader.dao.bo.ContractorderExample;
 
 import java.util.List;
 
-import com.ly.agrManader.web.api.marketing.request.SalesPriceRequest;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

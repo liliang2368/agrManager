@@ -8,7 +8,8 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ApiModel(value = "采购报表请求对象", description = "采购报表请求对象")
 public class pursuerRequest {
-
+    @ApiModelProperty(value = "采购商品规格", name = "specification")
+    private String specification;
 
     @ApiModelProperty(value = "采购主键", name = "purchaseId")
     private Integer purchaseId;
@@ -28,7 +29,24 @@ public class pursuerRequest {
     @ApiModelProperty(value = "是否质检", name = "supplierId")
     private Integer quaityState;
 
+    @ApiModelProperty(value = "采购合同", name = "contractPicture")
+    private String contractPicture;
+
+    @ApiModelProperty(value = "采购商品编码", name = "contractPicture")
+    private String purchaseCode;
+
+    @ApiModelProperty(value = "采购商品数量", name = "purchaseNum")
+    private Integer purchaseNum;
+
     private PageArg page;
+
+    public void setPurchaseNum(Integer purchaseNum) {
+        this.purchaseNum = purchaseNum;
+    }
+
+    public Integer getPurchaseNum() {
+        return purchaseNum;
+    }
 
     public PageArg getPage() {
         return page;
@@ -84,5 +102,29 @@ public class pursuerRequest {
 
     public Integer getQuaityState() {
         return quaityState;
+    }
+
+    public void setContractPicture(String contractPicture) {
+        this.contractPicture = contractPicture;
+    }
+
+    public void setSpecification(String specification) {
+        this.specification = specification;
+    }
+
+    public String getSpecification() {
+        return specification;
+    }
+
+    public String getContractPicture() {
+        return contractPicture;
+    }
+
+    public void setPurchaseCode(String purchaseCode) {
+        this.purchaseCode = purchaseCode;
+    }
+
+    public String getPurchaseCode() {
+        return purchaseCode;
     }
 }

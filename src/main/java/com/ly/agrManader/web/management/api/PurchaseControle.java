@@ -1,10 +1,8 @@
 package com.ly.agrManader.web.management.api;
-
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.BusinessException;
-import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import com.ly.agrManader.web.management.request.pursuerRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -49,13 +47,4 @@ public class PurchaseControle {
         }
         return response;
     }
-
-
-
-
-
-
-
-
-
 }

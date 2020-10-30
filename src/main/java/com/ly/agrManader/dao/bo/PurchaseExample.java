@@ -651,6 +651,76 @@ public class PurchaseExample {
             addCriterion("contract_picture not between", value1, value2, "contractPicture");
             return (Criteria) this;
         }
+
+        public Criteria andQuaitystateIsNull() {
+            addCriterion("quaityState is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateIsNotNull() {
+            addCriterion("quaityState is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateEqualTo(String value) {
+            addCriterion("quaityState =", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateNotEqualTo(String value) {
+            addCriterion("quaityState <>", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateGreaterThan(String value) {
+            addCriterion("quaityState >", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateGreaterThanOrEqualTo(String value) {
+            addCriterion("quaityState >=", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateLessThan(String value) {
+            addCriterion("quaityState <", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateLessThanOrEqualTo(String value) {
+            addCriterion("quaityState <=", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateLike(String value) {
+            addCriterion("quaityState like", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateNotLike(String value) {
+            addCriterion("quaityState not like", value, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateIn(List<String> values) {
+            addCriterion("quaityState in", values, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateNotIn(List<String> values) {
+            addCriterion("quaityState not in", values, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateBetween(String value1, String value2) {
+            addCriterion("quaityState between", value1, value2, "quaitystate");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuaitystateNotBetween(String value1, String value2) {
+            addCriterion("quaityState not between", value1, value2, "quaitystate");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

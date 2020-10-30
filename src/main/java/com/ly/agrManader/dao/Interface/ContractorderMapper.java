@@ -2,13 +2,9 @@ package com.ly.agrManader.dao.Interface;
 
 import com.ly.agrManader.dao.bo.Contractorder;
 import com.ly.agrManader.dao.bo.ContractorderExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface ContractorderMapper {
     long countByExample(ContractorderExample example);
 
@@ -31,7 +27,4 @@ public interface ContractorderMapper {
     int updateByPrimaryKeySelective(Contractorder record);
 
     int updateByPrimaryKey(Contractorder record);
-
-    int insertAndReturnKey(Contractorder contractorder);
-
 }

@@ -1,8 +1,5 @@
 package com.ly.agrManader.server.impl;
 
-import com.ly.agrManader.dao.Interface.CommodityMapper;
-import com.ly.agrManader.dao.Interface.ContractquotationMapper;
-import com.ly.agrManader.dao.Interface.PrepriceMapper;
 import com.ly.agrManader.dao.bo.*;
 import com.ly.agrManader.server.Interface.SalesPriceBusiv;
 import com.ly.agrManader.util.BaseResponse;

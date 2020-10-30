@@ -1,7 +1,5 @@
 package com.ly.agrManader.server.impl;
 
-import com.ly.agrManader.dao.Interface.PurchaseMapper;
-import com.ly.agrManader.dao.bo.Purchase;
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;

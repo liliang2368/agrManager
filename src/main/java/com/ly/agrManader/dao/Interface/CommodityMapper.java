@@ -4,9 +4,7 @@ import com.ly.agrManader.dao.bo.Commodity;
 import com.ly.agrManader.dao.bo.CommodityExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface CommodityMapper {
     long countByExample(CommodityExample example);
 
@@ -29,6 +27,4 @@ public interface CommodityMapper {
     int updateByPrimaryKeySelective(Commodity record);
 
     int updateByPrimaryKey(Commodity record);
-
-
 }

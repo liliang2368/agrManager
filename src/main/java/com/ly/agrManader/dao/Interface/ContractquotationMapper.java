@@ -2,14 +2,9 @@ package com.ly.agrManader.dao.Interface;
 
 import com.ly.agrManader.dao.bo.Contractquotation;
 import com.ly.agrManader.dao.bo.ContractquotationExample;
-
 import java.util.List;
-
-import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface ContractquotationMapper {
     long countByExample(ContractquotationExample example);
 
@@ -32,11 +27,4 @@ public interface ContractquotationMapper {
     int updateByPrimaryKeySelective(Contractquotation record);
 
     int updateByPrimaryKey(Contractquotation record);
-
-
-    List<SalesPriceRequest> selectSalesPriceSalesPriceAllCommodityDetails(SalesPriceRequest salesPriceRequest);
-
-    Contractquotation selectMaxContractid();
-
-
 }

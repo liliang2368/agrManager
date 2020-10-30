@@ -10,6 +10,7 @@
     <result column="specification" jdbcType="VARCHAR" property="specification" />
     <result column="purchase_time" jdbcType="DATE" property="purchaseTime" />
     <result column="contract_picture" jdbcType="VARCHAR" property="contractPicture" />
+    <result column="quaityState" jdbcType="VARCHAR" property="quaitystate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,7 +72,7 @@
   </sql>
   <sql id="Base_Column_List">
     purchase_id, purchase_name, purchase_code, purchase_num, supplier_id, specification, 
-    purchase_time, contract_picture
+    purchase_time, contract_picture, quaityState
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.PurchaseExample" resultMap="BaseResultMap">
     select
@@ -107,10 +108,12 @@
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Purchase">
     insert into purchase (purchase_id, purchase_name, purchase_code, 
       purchase_num, supplier_id, specification, 
-      purchase_time, contract_picture)
+      purchase_time, contract_picture, quaityState
+      )
     values (#{purchaseId,jdbcType=INTEGER}, #{purchaseName,jdbcType=VARCHAR}, #{purchaseCode,jdbcType=VARCHAR}, 
       #{purchaseNum,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR}, 
-      #{purchaseTime,jdbcType=DATE}, #{contractPicture,jdbcType=VARCHAR})
+      #{purchaseTime,jdbcType=DATE}, #{contractPicture,jdbcType=VARCHAR}, #{quaitystate,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Purchase">
     insert into purchase
@@ -139,6 +142,9 @@
       <if test="contractPicture != null">
         contract_picture,
       </if>
+      <if test="quaitystate != null">
+        quaityState,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="purchaseId != null">
@@ -164,6 +170,9 @@
       </if>
       <if test="contractPicture != null">
         #{contractPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="quaitystate != null">
+        #{quaitystate,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -200,6 +209,9 @@
       <if test="record.contractPicture != null">
         contract_picture = #{record.contractPicture,jdbcType=VARCHAR},
       </if>
+      <if test="record.quaitystate != null">
+        quaityState = #{record.quaitystate,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -214,7 +226,8 @@
       supplier_id = #{record.supplierId,jdbcType=INTEGER},
       specification = #{record.specification,jdbcType=VARCHAR},
       purchase_time = #{record.purchaseTime,jdbcType=DATE},
-      contract_picture = #{record.contractPicture,jdbcType=VARCHAR}
+      contract_picture = #{record.contractPicture,jdbcType=VARCHAR},
+      quaityState = #{record.quaitystate,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -243,6 +256,9 @@
       <if test="contractPicture != null">
         contract_picture = #{contractPicture,jdbcType=VARCHAR},
       </if>
+      <if test="quaitystate != null">
+        quaityState = #{quaitystate,jdbcType=VARCHAR},
+      </if>
     </set>
     where purchase_id = #{purchaseId,jdbcType=INTEGER}
   </update>
@@ -254,7 +270,8 @@
       supplier_id = #{supplierId,jdbcType=INTEGER},
       specification = #{specification,jdbcType=VARCHAR},
       purchase_time = #{purchaseTime,jdbcType=DATE},
-      contract_picture = #{contractPicture,jdbcType=VARCHAR}
+      contract_picture = #{contractPicture,jdbcType=VARCHAR},
+      quaityState = #{quaitystate,jdbcType=VARCHAR}
     where purchase_id = #{purchaseId,jdbcType=INTEGER}
   </update>
 </mapper>

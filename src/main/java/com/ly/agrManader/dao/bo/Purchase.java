@@ -19,6 +19,8 @@ public class Purchase {
 
     private String contractPicture;
 
+    private String quaitystate;
+
     public Integer getPurchaseId() {
         return purchaseId;
     }
@@ -81,5 +83,13 @@ public class Purchase {
 
     public void setContractPicture(String contractPicture) {
         this.contractPicture = contractPicture;
+    }
+
+    public String getQuaitystate() {
+        return quaitystate;
+    }
+
+    public void setQuaitystate(String quaitystate) {
+        this.quaitystate = quaitystate;
     }
 }

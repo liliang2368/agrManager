@@ -92,5 +92,4 @@ public class Preprice {
     public void setInputtime(Date inputtime) {
         this.inputtime = inputtime;
     }
-
 }

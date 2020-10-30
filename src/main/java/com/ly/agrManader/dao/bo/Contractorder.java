@@ -3,7 +3,7 @@ package com.ly.agrManader.dao.bo;
 import java.util.Date;
 
 public class Contractorder {
-    private Integer contractId;
+    private Integer contractid;
 
     private Integer examine;
 
@@ -24,11 +24,11 @@ public class Contractorder {
     private Date time;
 
     public Integer getContractid() {
-        return contractId;
+        return contractid;
     }
 
     public void setContractid(Integer contractid) {
-        this.contractId = contractid;
+        this.contractid = contractid;
     }
 
     public Integer getExamine() {
@@ -101,21 +101,5 @@ public class Contractorder {
 
     public void setTime(Date time) {
         this.time = time;
-    }
-
-    @Override
-    public String toString() {
-        return "Contractorder{" +
-                "contractid=" + contractId +
-                ", examine=" + examine +
-                ", preamount=" + preamount +
-                ", finamount=" + finamount +
-                ", paymentstate=" + paymentstate +
-                ", qualitystate=" + qualitystate +
-                ", warehous=" + warehous +
-                ", orderprocess=" + orderprocess +
-                ", customerid=" + customerid +
-                ", time=" + time +
-                '}';
     }
 }

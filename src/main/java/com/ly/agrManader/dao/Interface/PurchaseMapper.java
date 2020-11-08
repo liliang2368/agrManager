@@ -10,7 +10,7 @@ public interface PurchaseMapper {
 
     int deleteByExample(PurchaseExample example);
 
-    int deleteByPrimaryKey(Integer purchaseId);
+    int deleteByPrimaryKey(Integer purchaseid);
 
     int insert(Purchase record);
 
@@ -18,7 +18,7 @@ public interface PurchaseMapper {
 
     List<Purchase> selectByExample(PurchaseExample example);
 
-    Purchase selectByPrimaryKey(Integer purchaseId);
+    Purchase selectByPrimaryKey(Integer purchaseid);
 
     int updateByExampleSelective(@Param("record") Purchase record, @Param("example") PurchaseExample example);
 

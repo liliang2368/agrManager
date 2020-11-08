@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ly.agrManader.dao.Interface.PurchaseMapper">
   <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Purchase">
-    <id column="purchase_id" jdbcType="INTEGER" property="purchaseId" />
-    <result column="purchase_name" jdbcType="VARCHAR" property="purchaseName" />
-    <result column="purchase_code" jdbcType="VARCHAR" property="purchaseCode" />
-    <result column="purchase_num" jdbcType="INTEGER" property="purchaseNum" />
-    <result column="supplier_id" jdbcType="INTEGER" property="supplierId" />
+    <id column="purchaseId" jdbcType="INTEGER" property="purchaseid" />
+    <result column="purchaseName" jdbcType="VARCHAR" property="purchasename" />
+    <result column="purchaseCode" jdbcType="VARCHAR" property="purchasecode" />
+    <result column="purchaseNum" jdbcType="INTEGER" property="purchasenum" />
+    <result column="supplierId" jdbcType="INTEGER" property="supplierid" />
     <result column="specification" jdbcType="VARCHAR" property="specification" />
-    <result column="purchase_time" jdbcType="DATE" property="purchaseTime" />
-    <result column="contract_picture" jdbcType="VARCHAR" property="contractPicture" />
-    <result column="quaityState" jdbcType="VARCHAR" property="quaitystate" />
+    <result column="purchaseTime" jdbcType="TIMESTAMP" property="purchasetime" />
+    <result column="contractPicture" jdbcType="VARCHAR" property="contractpicture" />
+    <result column="quaitystate" jdbcType="VARCHAR" property="quaitystate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,8 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    purchase_id, purchase_name, purchase_code, purchase_num, supplier_id, specification, 
-    purchase_time, contract_picture, quaityState
+    purchaseId, purchaseName, purchaseCode, purchaseNum, supplierId, specification, purchaseTime, 
+    contractPicture, quaitystate
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.PurchaseExample" resultMap="BaseResultMap">
     select
@@ -93,11 +93,11 @@
     select 
     <include refid="Base_Column_List" />
     from purchase
-    where purchase_id = #{purchaseId,jdbcType=INTEGER}
+    where purchaseId = #{purchaseid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from purchase
-    where purchase_id = #{purchaseId,jdbcType=INTEGER}
+    where purchaseId = #{purchaseid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.PurchaseExample">
     delete from purchase
@@ -106,70 +106,70 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Purchase">
-    insert into purchase (purchase_id, purchase_name, purchase_code, 
-      purchase_num, supplier_id, specification, 
-      purchase_time, contract_picture, quaityState
+    insert into purchase (purchaseId, purchaseName, purchaseCode, 
+      purchaseNum, supplierId, specification, 
+      purchaseTime, contractPicture, quaitystate
       )
-    values (#{purchaseId,jdbcType=INTEGER}, #{purchaseName,jdbcType=VARCHAR}, #{purchaseCode,jdbcType=VARCHAR}, 
-      #{purchaseNum,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR}, 
-      #{purchaseTime,jdbcType=DATE}, #{contractPicture,jdbcType=VARCHAR}, #{quaitystate,jdbcType=VARCHAR}
+    values (#{purchaseid,jdbcType=INTEGER}, #{purchasename,jdbcType=VARCHAR}, #{purchasecode,jdbcType=VARCHAR}, 
+      #{purchasenum,jdbcType=INTEGER}, #{supplierid,jdbcType=INTEGER}, #{specification,jdbcType=VARCHAR}, 
+      #{purchasetime,jdbcType=TIMESTAMP}, #{contractpicture,jdbcType=VARCHAR}, #{quaitystate,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Purchase">
     insert into purchase
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="purchaseId != null">
-        purchase_id,
+      <if test="purchaseid != null">
+        purchaseId,
       </if>
-      <if test="purchaseName != null">
-        purchase_name,
+      <if test="purchasename != null">
+        purchaseName,
       </if>
-      <if test="purchaseCode != null">
-        purchase_code,
+      <if test="purchasecode != null">
+        purchaseCode,
       </if>
-      <if test="purchaseNum != null">
-        purchase_num,
+      <if test="purchasenum != null">
+        purchaseNum,
       </if>
-      <if test="supplierId != null">
-        supplier_id,
+      <if test="supplierid != null">
+        supplierId,
       </if>
       <if test="specification != null">
         specification,
       </if>
-      <if test="purchaseTime != null">
-        purchase_time,
+      <if test="purchasetime != null">
+        purchaseTime,
       </if>
-      <if test="contractPicture != null">
-        contract_picture,
+      <if test="contractpicture != null">
+        contractPicture,
       </if>
       <if test="quaitystate != null">
-        quaityState,
+        quaitystate,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="purchaseId != null">
-        #{purchaseId,jdbcType=INTEGER},
+      <if test="purchaseid != null">
+        #{purchaseid,jdbcType=INTEGER},
       </if>
-      <if test="purchaseName != null">
-        #{purchaseName,jdbcType=VARCHAR},
+      <if test="purchasename != null">
+        #{purchasename,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseCode != null">
-        #{purchaseCode,jdbcType=VARCHAR},
+      <if test="purchasecode != null">
+        #{purchasecode,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseNum != null">
-        #{purchaseNum,jdbcType=INTEGER},
+      <if test="purchasenum != null">
+        #{purchasenum,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        #{supplierId,jdbcType=INTEGER},
+      <if test="supplierid != null">
+        #{supplierid,jdbcType=INTEGER},
       </if>
       <if test="specification != null">
         #{specification,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseTime != null">
-        #{purchaseTime,jdbcType=DATE},
+      <if test="purchasetime != null">
+        #{purchasetime,jdbcType=TIMESTAMP},
       </if>
-      <if test="contractPicture != null">
-        #{contractPicture,jdbcType=VARCHAR},
+      <if test="contractpicture != null">
+        #{contractpicture,jdbcType=VARCHAR},
       </if>
       <if test="quaitystate != null">
         #{quaitystate,jdbcType=VARCHAR},
@@ -185,32 +185,32 @@
   <update id="updateByExampleSelective" parameterType="map">
     update purchase
     <set>
-      <if test="record.purchaseId != null">
-        purchase_id = #{record.purchaseId,jdbcType=INTEGER},
+      <if test="record.purchaseid != null">
+        purchaseId = #{record.purchaseid,jdbcType=INTEGER},
       </if>
-      <if test="record.purchaseName != null">
-        purchase_name = #{record.purchaseName,jdbcType=VARCHAR},
+      <if test="record.purchasename != null">
+        purchaseName = #{record.purchasename,jdbcType=VARCHAR},
       </if>
-      <if test="record.purchaseCode != null">
-        purchase_code = #{record.purchaseCode,jdbcType=VARCHAR},
+      <if test="record.purchasecode != null">
+        purchaseCode = #{record.purchasecode,jdbcType=VARCHAR},
       </if>
-      <if test="record.purchaseNum != null">
-        purchase_num = #{record.purchaseNum,jdbcType=INTEGER},
+      <if test="record.purchasenum != null">
+        purchaseNum = #{record.purchasenum,jdbcType=INTEGER},
       </if>
-      <if test="record.supplierId != null">
-        supplier_id = #{record.supplierId,jdbcType=INTEGER},
+      <if test="record.supplierid != null">
+        supplierId = #{record.supplierid,jdbcType=INTEGER},
       </if>
       <if test="record.specification != null">
         specification = #{record.specification,jdbcType=VARCHAR},
       </if>
-      <if test="record.purchaseTime != null">
-        purchase_time = #{record.purchaseTime,jdbcType=DATE},
+      <if test="record.purchasetime != null">
+        purchaseTime = #{record.purchasetime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.contractPicture != null">
-        contract_picture = #{record.contractPicture,jdbcType=VARCHAR},
+      <if test="record.contractpicture != null">
+        contractPicture = #{record.contractpicture,jdbcType=VARCHAR},
       </if>
       <if test="record.quaitystate != null">
-        quaityState = #{record.quaitystate,jdbcType=VARCHAR},
+        quaitystate = #{record.quaitystate,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -219,15 +219,15 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update purchase
-    set purchase_id = #{record.purchaseId,jdbcType=INTEGER},
-      purchase_name = #{record.purchaseName,jdbcType=VARCHAR},
-      purchase_code = #{record.purchaseCode,jdbcType=VARCHAR},
-      purchase_num = #{record.purchaseNum,jdbcType=INTEGER},
-      supplier_id = #{record.supplierId,jdbcType=INTEGER},
+    set purchaseId = #{record.purchaseid,jdbcType=INTEGER},
+      purchaseName = #{record.purchasename,jdbcType=VARCHAR},
+      purchaseCode = #{record.purchasecode,jdbcType=VARCHAR},
+      purchaseNum = #{record.purchasenum,jdbcType=INTEGER},
+      supplierId = #{record.supplierid,jdbcType=INTEGER},
       specification = #{record.specification,jdbcType=VARCHAR},
-      purchase_time = #{record.purchaseTime,jdbcType=DATE},
-      contract_picture = #{record.contractPicture,jdbcType=VARCHAR},
-      quaityState = #{record.quaitystate,jdbcType=VARCHAR}
+      purchaseTime = #{record.purchasetime,jdbcType=TIMESTAMP},
+      contractPicture = #{record.contractpicture,jdbcType=VARCHAR},
+      quaitystate = #{record.quaitystate,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -235,43 +235,43 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Purchase">
     update purchase
     <set>
-      <if test="purchaseName != null">
-        purchase_name = #{purchaseName,jdbcType=VARCHAR},
+      <if test="purchasename != null">
+        purchaseName = #{purchasename,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseCode != null">
-        purchase_code = #{purchaseCode,jdbcType=VARCHAR},
+      <if test="purchasecode != null">
+        purchaseCode = #{purchasecode,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseNum != null">
-        purchase_num = #{purchaseNum,jdbcType=INTEGER},
+      <if test="purchasenum != null">
+        purchaseNum = #{purchasenum,jdbcType=INTEGER},
       </if>
-      <if test="supplierId != null">
-        supplier_id = #{supplierId,jdbcType=INTEGER},
+      <if test="supplierid != null">
+        supplierId = #{supplierid,jdbcType=INTEGER},
       </if>
       <if test="specification != null">
         specification = #{specification,jdbcType=VARCHAR},
       </if>
-      <if test="purchaseTime != null">
-        purchase_time = #{purchaseTime,jdbcType=DATE},
+      <if test="purchasetime != null">
+        purchaseTime = #{purchasetime,jdbcType=TIMESTAMP},
       </if>
-      <if test="contractPicture != null">
-        contract_picture = #{contractPicture,jdbcType=VARCHAR},
+      <if test="contractpicture != null">
+        contractPicture = #{contractpicture,jdbcType=VARCHAR},
       </if>
       <if test="quaitystate != null">
-        quaityState = #{quaitystate,jdbcType=VARCHAR},
+        quaitystate = #{quaitystate,jdbcType=VARCHAR},
       </if>
     </set>
-    where purchase_id = #{purchaseId,jdbcType=INTEGER}
+    where purchaseId = #{purchaseid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Purchase">
     update purchase
-    set purchase_name = #{purchaseName,jdbcType=VARCHAR},
-      purchase_code = #{purchaseCode,jdbcType=VARCHAR},
-      purchase_num = #{purchaseNum,jdbcType=INTEGER},
-      supplier_id = #{supplierId,jdbcType=INTEGER},
+    set purchaseName = #{purchasename,jdbcType=VARCHAR},
+      purchaseCode = #{purchasecode,jdbcType=VARCHAR},
+      purchaseNum = #{purchasenum,jdbcType=INTEGER},
+      supplierId = #{supplierid,jdbcType=INTEGER},
       specification = #{specification,jdbcType=VARCHAR},
-      purchase_time = #{purchaseTime,jdbcType=DATE},
-      contract_picture = #{contractPicture,jdbcType=VARCHAR},
-      quaityState = #{quaitystate,jdbcType=VARCHAR}
-    where purchase_id = #{purchaseId,jdbcType=INTEGER}
+      purchaseTime = #{purchasetime,jdbcType=TIMESTAMP},
+      contractPicture = #{contractpicture,jdbcType=VARCHAR},
+      quaitystate = #{quaitystate,jdbcType=VARCHAR}
+    where purchaseId = #{purchaseid,jdbcType=INTEGER}
   </update>
 </mapper>

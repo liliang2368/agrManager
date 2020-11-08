@@ -3,62 +3,62 @@ package com.ly.agrManader.dao.bo;
 import java.util.Date;
 
 public class Purchase {
-    private Integer purchaseId;
+    private Integer purchaseid;
 
-    private String purchaseName;
+    private String purchasename;
 
-    private String purchaseCode;
+    private String purchasecode;
 
-    private Integer purchaseNum;
+    private Integer purchasenum;
 
-    private Integer supplierId;
+    private Integer supplierid;
 
     private String specification;
 
-    private Date purchaseTime;
+    private Date purchasetime;
 
-    private String contractPicture;
+    private String contractpicture;
 
     private String quaitystate;
 
-    public Integer getPurchaseId() {
-        return purchaseId;
+    public Integer getPurchaseid() {
+        return purchaseid;
     }
 
-    public void setPurchaseId(Integer purchaseId) {
-        this.purchaseId = purchaseId;
+    public void setPurchaseid(Integer purchaseid) {
+        this.purchaseid = purchaseid;
     }
 
-    public String getPurchaseName() {
-        return purchaseName;
+    public String getPurchasename() {
+        return purchasename;
     }
 
-    public void setPurchaseName(String purchaseName) {
-        this.purchaseName = purchaseName;
+    public void setPurchasename(String purchasename) {
+        this.purchasename = purchasename;
     }
 
-    public String getPurchaseCode() {
-        return purchaseCode;
+    public String getPurchasecode() {
+        return purchasecode;
     }
 
-    public void setPurchaseCode(String purchaseCode) {
-        this.purchaseCode = purchaseCode;
+    public void setPurchasecode(String purchasecode) {
+        this.purchasecode = purchasecode;
     }
 
-    public Integer getPurchaseNum() {
-        return purchaseNum;
+    public Integer getPurchasenum() {
+        return purchasenum;
     }
 
-    public void setPurchaseNum(Integer purchaseNum) {
-        this.purchaseNum = purchaseNum;
+    public void setPurchasenum(Integer purchasenum) {
+        this.purchasenum = purchasenum;
     }
 
-    public Integer getSupplierId() {
-        return supplierId;
+    public Integer getSupplierid() {
+        return supplierid;
     }
 
-    public void setSupplierId(Integer supplierId) {
-        this.supplierId = supplierId;
+    public void setSupplierid(Integer supplierid) {
+        this.supplierid = supplierid;
     }
 
     public String getSpecification() {
@@ -69,20 +69,20 @@ public class Purchase {
         this.specification = specification;
     }
 
-    public Date getPurchaseTime() {
-        return purchaseTime;
+    public Date getPurchasetime() {
+        return purchasetime;
     }
 
-    public void setPurchaseTime(Date purchaseTime) {
-        this.purchaseTime = purchaseTime;
+    public void setPurchasetime(Date purchasetime) {
+        this.purchasetime = purchasetime;
     }
 
-    public String getContractPicture() {
-        return contractPicture;
+    public String getContractpicture() {
+        return contractpicture;
     }
 
-    public void setContractPicture(String contractPicture) {
-        this.contractPicture = contractPicture;
+    public void setContractpicture(String contractpicture) {
+        this.contractpicture = contractpicture;
     }
 
     public String getQuaitystate() {

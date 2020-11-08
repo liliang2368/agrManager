@@ -52,7 +52,7 @@ public class SalesPriceController {
         logger.info("SalesPriceController#addSalesPrice request:{}", "");
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
         try {
-            return salesPriceBusiv.addrSalesPriceThisCommodityDetails(request);
+//            return salesPriceBusiv.addrSalesPriceThisCommodityDetails(request);
         } catch (BusinessException | SystemException e) {
             response.setSuccess(false);
             response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);

@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ly.agrManader.dao.Interface.CommodityMapper">
   <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.Commodity">
-    <id column="commodityId" jdbcType="INTEGER" property="commodityid" />
-    <result column="agriculturalProductsId" jdbcType="INTEGER" property="agriculturalproductsid" />
-    <result column="commodityName" jdbcType="VARCHAR" property="commodityname" />
-    <result column="measurementMethod" jdbcType="VARCHAR" property="measurementmethod" />
-    <result column="storageMethod" jdbcType="VARCHAR" property="storagemethod" />
-    <result column="qualityGuaranteePeriod" jdbcType="INTEGER" property="qualityguaranteeperiod" />
-    <result column="minStock" jdbcType="INTEGER" property="minstock" />
+    <id column="commodityid" jdbcType="INTEGER" property="commodityid" />
+    <result column="agriculturalproductsid" jdbcType="INTEGER" property="agriculturalproductsid" />
+    <result column="commodityname" jdbcType="VARCHAR" property="commodityname" />
+    <result column="measurementmethod" jdbcType="VARCHAR" property="measurementmethod" />
+    <result column="storagemethodstoragemethod" jdbcType="VARCHAR" property="storagemethodstoragemethod" />
+    <result column="qualityguaranteeperiod" jdbcType="VARCHAR" property="qualityguaranteeperiod" />
+    <result column="minstock" jdbcType="INTEGER" property="minstock" />
     <result column="stock" jdbcType="INTEGER" property="stock" />
-    <result column="maxStock" jdbcType="INTEGER" property="maxstock" />
-    <result column="recommendStock" jdbcType="INTEGER" property="recommendstock" />
-    <result column="price" jdbcType="DOUBLE" property="price" />
-    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="maxstock" jdbcType="INTEGER" property="maxstock" />
+    <result column="recommendstock" jdbcType="VARCHAR" property="recommendstock" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
     <result column="costprice" jdbcType="DECIMAL" property="costprice" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -75,8 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    commodityId, agriculturalProductsId, commodityName, measurementMethod, storageMethod, 
-    qualityGuaranteePeriod, minStock, stock, maxStock, recommendStock, price, grade, 
+    commodityid, agriculturalproductsid, commodityname, measurementmethod, storagemethodstoragemethod, 
+    qualityguaranteeperiod, minstock, stock, maxstock, recommendstock, price, grade, 
     costprice
   </sql>
   <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample" resultMap="BaseResultMap">
@@ -98,11 +98,11 @@
     select 
     <include refid="Base_Column_List" />
     from commodity
-    where commodityId = #{commodityid,jdbcType=INTEGER}
+    where commodityid = #{commodityid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from commodity
-    where commodityId = #{commodityid,jdbcType=INTEGER}
+    where commodityid = #{commodityid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.CommodityExample">
     delete from commodity
@@ -111,49 +111,49 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Commodity">
-    insert into commodity (commodityId, agriculturalProductsId, 
-      commodityName, measurementMethod, storageMethod, 
-      qualityGuaranteePeriod, minStock, stock, 
-      maxStock, recommendStock, price, 
+    insert into commodity (commodityid, agriculturalproductsid, 
+      commodityname, measurementmethod, storagemethodstoragemethod, 
+      qualityguaranteeperiod, minstock, stock, 
+      maxstock, recommendstock, price, 
       grade, costprice)
     values (#{commodityid,jdbcType=INTEGER}, #{agriculturalproductsid,jdbcType=INTEGER}, 
-      #{commodityname,jdbcType=VARCHAR}, #{measurementmethod,jdbcType=VARCHAR}, #{storagemethod,jdbcType=VARCHAR}, 
-      #{qualityguaranteeperiod,jdbcType=INTEGER}, #{minstock,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, 
-      #{maxstock,jdbcType=INTEGER}, #{recommendstock,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, 
-      #{grade,jdbcType=INTEGER}, #{costprice,jdbcType=DECIMAL})
+      #{commodityname,jdbcType=VARCHAR}, #{measurementmethod,jdbcType=VARCHAR}, #{storagemethodstoragemethod,jdbcType=VARCHAR}, 
+      #{qualityguaranteeperiod,jdbcType=VARCHAR}, #{minstock,jdbcType=INTEGER}, #{stock,jdbcType=INTEGER}, 
+      #{maxstock,jdbcType=INTEGER}, #{recommendstock,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{grade,jdbcType=VARCHAR}, #{costprice,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Commodity">
     insert into commodity
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="commodityid != null">
-        commodityId,
+        commodityid,
       </if>
       <if test="agriculturalproductsid != null">
-        agriculturalProductsId,
+        agriculturalproductsid,
       </if>
       <if test="commodityname != null">
-        commodityName,
+        commodityname,
       </if>
       <if test="measurementmethod != null">
-        measurementMethod,
+        measurementmethod,
       </if>
-      <if test="storagemethod != null">
-        storageMethod,
+      <if test="storagemethodstoragemethod != null">
+        storagemethodstoragemethod,
       </if>
       <if test="qualityguaranteeperiod != null">
-        qualityGuaranteePeriod,
+        qualityguaranteeperiod,
       </if>
       <if test="minstock != null">
-        minStock,
+        minstock,
       </if>
       <if test="stock != null">
         stock,
       </if>
       <if test="maxstock != null">
-        maxStock,
+        maxstock,
       </if>
       <if test="recommendstock != null">
-        recommendStock,
+        recommendstock,
       </if>
       <if test="price != null">
         price,
@@ -178,11 +178,11 @@
       <if test="measurementmethod != null">
         #{measurementmethod,jdbcType=VARCHAR},
       </if>
-      <if test="storagemethod != null">
-        #{storagemethod,jdbcType=VARCHAR},
+      <if test="storagemethodstoragemethod != null">
+        #{storagemethodstoragemethod,jdbcType=VARCHAR},
       </if>
       <if test="qualityguaranteeperiod != null">
-        #{qualityguaranteeperiod,jdbcType=INTEGER},
+        #{qualityguaranteeperiod,jdbcType=VARCHAR},
       </if>
       <if test="minstock != null">
         #{minstock,jdbcType=INTEGER},
@@ -194,13 +194,13 @@
         #{maxstock,jdbcType=INTEGER},
       </if>
       <if test="recommendstock != null">
-        #{recommendstock,jdbcType=INTEGER},
+        #{recommendstock,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        #{price,jdbcType=DOUBLE},
+        #{price,jdbcType=DECIMAL},
       </if>
       <if test="grade != null">
-        #{grade,jdbcType=INTEGER},
+        #{grade,jdbcType=VARCHAR},
       </if>
       <if test="costprice != null">
         #{costprice,jdbcType=DECIMAL},
@@ -217,40 +217,40 @@
     update commodity
     <set>
       <if test="record.commodityid != null">
-        commodityId = #{record.commodityid,jdbcType=INTEGER},
+        commodityid = #{record.commodityid,jdbcType=INTEGER},
       </if>
       <if test="record.agriculturalproductsid != null">
-        agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
+        agriculturalproductsid = #{record.agriculturalproductsid,jdbcType=INTEGER},
       </if>
       <if test="record.commodityname != null">
-        commodityName = #{record.commodityname,jdbcType=VARCHAR},
+        commodityname = #{record.commodityname,jdbcType=VARCHAR},
       </if>
       <if test="record.measurementmethod != null">
-        measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
+        measurementmethod = #{record.measurementmethod,jdbcType=VARCHAR},
       </if>
-      <if test="record.storagemethod != null">
-        storageMethod = #{record.storagemethod,jdbcType=VARCHAR},
+      <if test="record.storagemethodstoragemethod != null">
+        storagemethodstoragemethod = #{record.storagemethodstoragemethod,jdbcType=VARCHAR},
       </if>
       <if test="record.qualityguaranteeperiod != null">
-        qualityGuaranteePeriod = #{record.qualityguaranteeperiod,jdbcType=INTEGER},
+        qualityguaranteeperiod = #{record.qualityguaranteeperiod,jdbcType=VARCHAR},
       </if>
       <if test="record.minstock != null">
-        minStock = #{record.minstock,jdbcType=INTEGER},
+        minstock = #{record.minstock,jdbcType=INTEGER},
       </if>
       <if test="record.stock != null">
         stock = #{record.stock,jdbcType=INTEGER},
       </if>
       <if test="record.maxstock != null">
-        maxStock = #{record.maxstock,jdbcType=INTEGER},
+        maxstock = #{record.maxstock,jdbcType=INTEGER},
       </if>
       <if test="record.recommendstock != null">
-        recommendStock = #{record.recommendstock,jdbcType=INTEGER},
+        recommendstock = #{record.recommendstock,jdbcType=VARCHAR},
       </if>
       <if test="record.price != null">
-        price = #{record.price,jdbcType=DOUBLE},
+        price = #{record.price,jdbcType=DECIMAL},
       </if>
       <if test="record.grade != null">
-        grade = #{record.grade,jdbcType=INTEGER},
+        grade = #{record.grade,jdbcType=VARCHAR},
       </if>
       <if test="record.costprice != null">
         costprice = #{record.costprice,jdbcType=DECIMAL},
@@ -262,18 +262,18 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update commodity
-    set commodityId = #{record.commodityid,jdbcType=INTEGER},
-      agriculturalProductsId = #{record.agriculturalproductsid,jdbcType=INTEGER},
-      commodityName = #{record.commodityname,jdbcType=VARCHAR},
-      measurementMethod = #{record.measurementmethod,jdbcType=VARCHAR},
-      storageMethod = #{record.storagemethod,jdbcType=VARCHAR},
-      qualityGuaranteePeriod = #{record.qualityguaranteeperiod,jdbcType=INTEGER},
-      minStock = #{record.minstock,jdbcType=INTEGER},
+    set commodityid = #{record.commodityid,jdbcType=INTEGER},
+      agriculturalproductsid = #{record.agriculturalproductsid,jdbcType=INTEGER},
+      commodityname = #{record.commodityname,jdbcType=VARCHAR},
+      measurementmethod = #{record.measurementmethod,jdbcType=VARCHAR},
+      storagemethodstoragemethod = #{record.storagemethodstoragemethod,jdbcType=VARCHAR},
+      qualityguaranteeperiod = #{record.qualityguaranteeperiod,jdbcType=VARCHAR},
+      minstock = #{record.minstock,jdbcType=INTEGER},
       stock = #{record.stock,jdbcType=INTEGER},
-      maxStock = #{record.maxstock,jdbcType=INTEGER},
-      recommendStock = #{record.recommendstock,jdbcType=INTEGER},
-      price = #{record.price,jdbcType=DOUBLE},
-      grade = #{record.grade,jdbcType=INTEGER},
+      maxstock = #{record.maxstock,jdbcType=INTEGER},
+      recommendstock = #{record.recommendstock,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      grade = #{record.grade,jdbcType=VARCHAR},
       costprice = #{record.costprice,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -283,58 +283,58 @@
     update commodity
     <set>
       <if test="agriculturalproductsid != null">
-        agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
+        agriculturalproductsid = #{agriculturalproductsid,jdbcType=INTEGER},
       </if>
       <if test="commodityname != null">
-        commodityName = #{commodityname,jdbcType=VARCHAR},
+        commodityname = #{commodityname,jdbcType=VARCHAR},
       </if>
       <if test="measurementmethod != null">
-        measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
+        measurementmethod = #{measurementmethod,jdbcType=VARCHAR},
       </if>
-      <if test="storagemethod != null">
-        storageMethod = #{storagemethod,jdbcType=VARCHAR},
+      <if test="storagemethodstoragemethod != null">
+        storagemethodstoragemethod = #{storagemethodstoragemethod,jdbcType=VARCHAR},
       </if>
       <if test="qualityguaranteeperiod != null">
-        qualityGuaranteePeriod = #{qualityguaranteeperiod,jdbcType=INTEGER},
+        qualityguaranteeperiod = #{qualityguaranteeperiod,jdbcType=VARCHAR},
       </if>
       <if test="minstock != null">
-        minStock = #{minstock,jdbcType=INTEGER},
+        minstock = #{minstock,jdbcType=INTEGER},
       </if>
       <if test="stock != null">
         stock = #{stock,jdbcType=INTEGER},
       </if>
       <if test="maxstock != null">
-        maxStock = #{maxstock,jdbcType=INTEGER},
+        maxstock = #{maxstock,jdbcType=INTEGER},
       </if>
       <if test="recommendstock != null">
-        recommendStock = #{recommendstock,jdbcType=INTEGER},
+        recommendstock = #{recommendstock,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        price = #{price,jdbcType=DOUBLE},
+        price = #{price,jdbcType=DECIMAL},
       </if>
       <if test="grade != null">
-        grade = #{grade,jdbcType=INTEGER},
+        grade = #{grade,jdbcType=VARCHAR},
       </if>
       <if test="costprice != null">
         costprice = #{costprice,jdbcType=DECIMAL},
       </if>
     </set>
-    where commodityId = #{commodityid,jdbcType=INTEGER}
+    where commodityid = #{commodityid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Commodity">
     update commodity
-    set agriculturalProductsId = #{agriculturalproductsid,jdbcType=INTEGER},
-      commodityName = #{commodityname,jdbcType=VARCHAR},
-      measurementMethod = #{measurementmethod,jdbcType=VARCHAR},
-      storageMethod = #{storagemethod,jdbcType=VARCHAR},
-      qualityGuaranteePeriod = #{qualityguaranteeperiod,jdbcType=INTEGER},
-      minStock = #{minstock,jdbcType=INTEGER},
+    set agriculturalproductsid = #{agriculturalproductsid,jdbcType=INTEGER},
+      commodityname = #{commodityname,jdbcType=VARCHAR},
+      measurementmethod = #{measurementmethod,jdbcType=VARCHAR},
+      storagemethodstoragemethod = #{storagemethodstoragemethod,jdbcType=VARCHAR},
+      qualityguaranteeperiod = #{qualityguaranteeperiod,jdbcType=VARCHAR},
+      minstock = #{minstock,jdbcType=INTEGER},
       stock = #{stock,jdbcType=INTEGER},
-      maxStock = #{maxstock,jdbcType=INTEGER},
-      recommendStock = #{recommendstock,jdbcType=INTEGER},
-      price = #{price,jdbcType=DOUBLE},
-      grade = #{grade,jdbcType=INTEGER},
+      maxstock = #{maxstock,jdbcType=INTEGER},
+      recommendstock = #{recommendstock,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      grade = #{grade,jdbcType=VARCHAR},
       costprice = #{costprice,jdbcType=DECIMAL}
-    where commodityId = #{commodityid,jdbcType=INTEGER}
+    where commodityid = #{commodityid,jdbcType=INTEGER}
   </update>
 </mapper>

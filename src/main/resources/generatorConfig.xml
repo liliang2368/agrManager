@@ -5,7 +5,7 @@
     <!-- 数据库驱动 -->
     <!-- <classPathEntry location="/Users/guchuanlong/opt/jdbc-libs/ojdbc7-12.1.0.2.jar" /> -->
     <classPathEntry
-            location="/System/Volumes/Data/Users/mac/maven/MavenRepository/MavenRepository/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar"/>
+            location="/Users/mac/maven/MavenRepository/MavenRepository/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar"/>
     <context id="context1" targetRuntime="MyBatis3">
         <!--  <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
                 <property name="searchString" value="Example$"/>
@@ -18,8 +18,8 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://112.124.13.227:3306/agr-procuce-manager?useUnicode=true&amp;characterEncoding=UTF-8"
-                        userId="root" password="a">
+                        connectionURL="jdbc:mysql://localhost:3306/agr-procuce-manager?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="a136607123">
         </jdbcConnection>
 
         <!-- 类型转换器 -->
@@ -49,7 +49,7 @@
                 targetPackage="com.ly.agrManader.dao.Interface"
                 targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java"
                 type="XMLMAPPER"/>
-        <table tableName="%" enableCountByExample="true"
+        <table tableName="purchase" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="false"/>
     </context>

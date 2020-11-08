@@ -8,7 +8,6 @@ import com.ly.agrManader.web.management.request.SalesPriceRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,52 +36,51 @@ public class SalesPriceBusivImpl implements SalesPriceBusiv {
      * 提交销售定价合同 等待审核
      *
      * @param request
-     * @return 1录入成功，0失败
      */
     @Override
-    public BaseResponse<Integer> addrSalesPriceThisCommodityDetails(SalesPriceRequest request) {
+    public void addrSalesPriceThisCommodityDetails(SalesPriceRequest request) {
 
-        Contractquotation getMaxcontractQuotation = contractquotationMapper.selectMaxContractid();
-        int maxId;
-        if (getMaxcontractQuotation != null) {
-            maxId = getMaxcontractQuotation.getContractid() + 1;
-        } else {
-            maxId = 1;
-        }
+//        Contractquotation getMaxcontractQuotation = contractquotationMapper.selectMaxContractid();
+//        int maxId;
+//        if (getMaxcontractQuotation != null) {
+//            maxId = getMaxcontractQuotation.getContractid() + 1;
+//        } else {
+//            maxId = 1;
+//        }
+//
+//        //销售定价所有的信息
+//        Date date=new Date();
+//        Preprice preprice = new Preprice();
+//        preprice.setPreproductid(maxId);
+//        preprice.setInputtime(request.getInputtime());
+//        preprice.setMarketname(request.getMarketname());
+//        preprice.setMarketprice(request.getMarketprice());
+//        preprice.setMeasurementmethod(request.getMeasurementmethod());
+//        preprice.setTime(date);
+//        preprice.setWholesalername(request.getWholesalername());
+//        preprice.setTradeprice(request.getTradeprice());
+//        //-------缺少商品设置
+//
+//        int insertprepriceResult = prepriceMapper.insert(preprice);
+//
+//        //定义销售定价的 所有的流程控制
+//        Contractquotation contractquotation = new Contractquotation();
+//        contractquotation.setContractid(maxId);
+//        contractquotation.setCustomerdemand(request.getCustomerdemand());
+//        contractquotation.setSolution(request.getSolution());
+//        contractquotation.setFinprice(request.getFinprice());
+//        contractquotation.setStats(0);
+//        int insertcontractquotationResult = contractquotationMapper.insert(contractquotation);
+//        if (preprice.getPreproductid().equals(contractquotation.getContractid())) {
+//            return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1);
+//        }
+//
+//
+//        return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 0,1);
 
-        //销售定价所有的信息
-        Date date=new Date();
-        Preprice preprice = new Preprice();
-        preprice.setPreproductid(maxId);
-        preprice.setInputtime(request.getInputtime());
-        preprice.setMarketname(request.getMarketname());
-        preprice.setMarketprice(request.getMarketprice());
-        preprice.setMeasurementmethod(request.getMeasurementmethod());
-        preprice.setTime(date);
-        preprice.setWholesalername(request.getWholesalername());
-        preprice.setTradeprice(request.getTradeprice());
-        //-------缺少商品设置
-
-        int insertprepriceResult = prepriceMapper.insert(preprice);
-
-        //定义销售定价的 所有的流程控制
-        Contractquotation contractquotation = new Contractquotation();
-        contractquotation.setContractid(maxId);
-        contractquotation.setCustomerdemand(request.getCustomerdemand());
-        contractquotation.setSolution(request.getSolution());
-        contractquotation.setFinprice(request.getFinprice());
-        contractquotation.setStats(0);
-        int insertcontractquotationResult = contractquotationMapper.insert(contractquotation);
-        if (preprice.getPreproductid().equals(contractquotation.getContractid())) {
-            return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1);
-        }
-
-
-        return new BaseResponse<Integer>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 0,1);
+//    }
 
     }
-
-
     /**
      * @param request
      * @return
@@ -134,8 +132,12 @@ public class SalesPriceBusivImpl implements SalesPriceBusiv {
      */
     @Override
     public BaseResponse<List<SalesPriceRequest>> selectSalesPriceSalesPriceAllCommodityDetails(SalesPriceRequest request) {
-        List<SalesPriceRequest> result = contractquotationMapper.selectSalesPriceSalesPriceAllCommodityDetails(request);
-        System.err.println(result);
-        return new BaseResponse<List<SalesPriceRequest>>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1,result);
+//        List<SalesPriceRequest> result = contractquotationMapper.selectSalesPriceSalesPriceAllCommodityDetails(request);
+//        System.err.println(result);
+//        return new BaseResponse<List<SalesPriceRequest>>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE, 1,result);
+//
+//
+        return null;
+
     }
 }

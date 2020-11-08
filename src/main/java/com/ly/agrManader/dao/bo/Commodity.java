@@ -11,9 +11,9 @@ public class Commodity {
 
     private String measurementmethod;
 
-    private String storagemethod;
+    private String storagemethodstoragemethod;
 
-    private Integer qualityguaranteeperiod;
+    private String qualityguaranteeperiod;
 
     private Integer minstock;
 
@@ -21,11 +21,11 @@ public class Commodity {
 
     private Integer maxstock;
 
-    private Integer recommendstock;
+    private String recommendstock;
 
-    private Double price;
+    private BigDecimal price;
 
-    private Integer grade;
+    private String grade;
 
     private BigDecimal costprice;
 
@@ -61,19 +61,19 @@ public class Commodity {
         this.measurementmethod = measurementmethod;
     }
 
-    public String getStoragemethod() {
-        return storagemethod;
+    public String getStoragemethodstoragemethod() {
+        return storagemethodstoragemethod;
     }
 
-    public void setStoragemethod(String storagemethod) {
-        this.storagemethod = storagemethod;
+    public void setStoragemethodstoragemethod(String storagemethodstoragemethod) {
+        this.storagemethodstoragemethod = storagemethodstoragemethod;
     }
 
-    public Integer getQualityguaranteeperiod() {
+    public String getQualityguaranteeperiod() {
         return qualityguaranteeperiod;
     }
 
-    public void setQualityguaranteeperiod(Integer qualityguaranteeperiod) {
+    public void setQualityguaranteeperiod(String qualityguaranteeperiod) {
         this.qualityguaranteeperiod = qualityguaranteeperiod;
     }
 
@@ -101,27 +101,27 @@ public class Commodity {
         this.maxstock = maxstock;
     }
 
-    public Integer getRecommendstock() {
+    public String getRecommendstock() {
         return recommendstock;
     }
 
-    public void setRecommendstock(Integer recommendstock) {
+    public void setRecommendstock(String recommendstock) {
         this.recommendstock = recommendstock;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public Integer getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(Integer grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 

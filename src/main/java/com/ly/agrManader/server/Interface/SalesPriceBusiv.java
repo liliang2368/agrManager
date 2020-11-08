@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface SalesPriceBusiv {
 
-    BaseResponse<Integer> addrSalesPriceThisCommodityDetails(SalesPriceRequest request);
+    void addrSalesPriceThisCommodityDetails(SalesPriceRequest request);
 
     BaseResponse<Integer> examineSalesPriceThisCommodityDetails(SalesPriceRequest request);
 

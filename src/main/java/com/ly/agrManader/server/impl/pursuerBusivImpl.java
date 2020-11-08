@@ -1,5 +1,7 @@
 package com.ly.agrManader.server.impl;
 
+import com.ly.agrManader.dao.Interface.PurchaseMapper;
+import com.ly.agrManader.dao.bo.Purchase;
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
@@ -35,12 +37,12 @@ public class pursuerBusivImpl implements IpursuerBusiv {
         BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
         Date date=new Date();
         Purchase purchase=new Purchase();
-        purchase.setSupplierId(request.getSupplierId());//供货商ID
-        purchase.setContractPicture(request.getContractPicture());//采购合同图片
-        purchase.setPurchaseCode(request.getPurchaseCode());//采购商品编码
-        purchase.setPurchaseName(request.getPurchaseProduce());//采购产品名称
-        purchase.setPurchaseNum(request.getPurchaseNum());//采购产品数量
-        purchase.setPurchaseTime(date);//采购时间
+        purchase.setSupplierid(request.getSupplierId());//供货商ID
+        purchase.setContractpicture(request.getContractPicture());//采购合同图片
+        purchase.setPurchasecode(request.getPurchaseCode());//采购商品编码
+        purchase.setPurchasename(request.getPurchaseProduce());//采购产品名称
+        purchase.setPurchasenum(request.getPurchaseNum());//采购产品数量
+        purchase.setPurchasetime(date);//采购时间
         purchase.setSpecification(request.getSpecification());//采购商品规格
         //TODO:加入是否进行了质检
         try {

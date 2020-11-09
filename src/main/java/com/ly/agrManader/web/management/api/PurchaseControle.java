@@ -18,14 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PurchaseControle {
     private static final Logger logger = LoggerFactory.getLogger(PurchaseControle.class);
-
-
     @Autowired
     private IpursuerBusiv ipursuerBusiv;
-
-
-
-    @ApiOperation(value = "添加销售定价", httpMethod = "POST", consumes = "application/json")
+    @ApiOperation(value = "农产品采购", httpMethod = "POST", consumes = "application/json")
     @ApiResponse(code = 200, message = "success", response = String.class)
     @PostMapping(value = "/v1.0/addPurchase")
     public BaseResponse<Integer> addPurchase(@RequestBody pursuerRequest request) {
@@ -46,4 +41,31 @@ public class PurchaseControle {
         }
         return response;
     }
+
+
+    @ApiOperation(value = "销售部进行农产品进行质检", httpMethod = "POST", consumes = "application/json")
+    @ApiResponse(code = 200, message = "success", response = String.class)
+    @PostMapping(value = "/v1.0/addPurchaseQuality")
+    public BaseResponse<Integer> addPurchaseQuality(@RequestBody pursuerRequest request) {
+        logger.info("PurchaseControle#addPurchase request:{}", "");
+        BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
+        try {
+            response=ipursuerBusiv.uodatePurchase(request);
+        } catch (BusinessException | SystemException e) {
+            response.setSuccess(false);
+            response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);
+            response.setResultMessage(BusinessConstants.BUSI_FAILURE_MESSAGE);
+            logger.error("PurchaseControle#addPurchase 发生业务或系统错误：{}" + e.getMessage(), e);
+        } catch (Exception e) {
+            response.setSuccess(false);
+            response.setResultCode(BusinessConstants.BUSI_FAILURE_CODE);
+            response.setResultMessage(BusinessConstants.BUSI_FAILURE_MESSAGE);
+            logger.error("PurchaseControle#addPurchase 发生错误：{}" + e.getMessage(), e);
+        }
+        return response;
+    }
+
+
+
+
 }

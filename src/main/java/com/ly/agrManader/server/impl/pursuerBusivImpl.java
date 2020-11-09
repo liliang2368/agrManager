@@ -2,6 +2,7 @@ package com.ly.agrManader.server.impl;
 
 import com.ly.agrManader.dao.Interface.PurchaseMapper;
 import com.ly.agrManader.dao.bo.Purchase;
+import com.ly.agrManader.dao.bo.PurchaseExample;
 import com.ly.agrManader.server.Interface.IpursuerBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
@@ -53,6 +54,19 @@ public class pursuerBusivImpl implements IpursuerBusiv {
             logger.info(e.getMessage());
         }
         //
+        return response;
+    }
+
+    @Override
+    public BaseResponse<Integer> uodatePurchase(pursuerRequest request) {
+        BaseResponse<Integer> response = new BaseResponse<>(true, BusinessConstants.BUSI_SUCCESS_CODE, BusinessConstants.BUSI_SUCCESS_MESSAGE);
+        PurchaseExample example=new PurchaseExample();
+        PurchaseExample.Criteria criteria=example.createCriteria();
+        criteria.andPurchaseidEqualTo(request.getPurchaseId());
+        Purchase purchase=new Purchase();
+        purchase.setQuaitystate("2");//质检状态 更改  质检2为
+        Integer result=purchaseMapper.updateByExample(purchase,example);
+        response.setResult(result);
         return response;
     }
 }

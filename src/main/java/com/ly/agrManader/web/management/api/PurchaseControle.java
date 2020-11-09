@@ -64,8 +64,4 @@ public class PurchaseControle {
         }
         return response;
     }
-
-
-
-
 }

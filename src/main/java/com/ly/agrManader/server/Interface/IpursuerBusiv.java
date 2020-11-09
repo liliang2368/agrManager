@@ -7,7 +7,7 @@ import com.ly.agrManader.web.management.vo.pursuerVO;
 
 public interface IpursuerBusiv {
 
-    public BaseResponse<pageResult<pursuerVO>> pageQueryPurchse(pursuerRequest request);
+    BaseResponse<pageResult<pursuerVO>> pageQueryPurchse(pursuerRequest request);
     BaseResponse<Integer> uodatePurchase(pursuerRequest request);
     BaseResponse<Integer> insertPurchase(pursuerRequest request);
 }

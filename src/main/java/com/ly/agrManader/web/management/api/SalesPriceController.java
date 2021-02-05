@@ -7,7 +7,6 @@ package com.ly.agrManader.web.management.api;
  */
 
 
-import com.ly.agrManader.server.impl.SalesPriceBusivImpl;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.BusinessException;

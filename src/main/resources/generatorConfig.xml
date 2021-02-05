@@ -18,8 +18,8 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/agr-procuce-manager?useUnicode=true&amp;characterEncoding=UTF-8"
-                        userId="root" password="a136607123">
+                        connectionURL="jdbc:mysql://localhost:3306/qzybug?useUnicode=true&amp;characterEncoding=UTF-8"
+                        userId="root" password="12345678">
         </jdbcConnection>
 
         <!-- 类型转换器 -->
@@ -49,7 +49,13 @@
                 targetPackage="com.ly.agrManader.dao.Interface"
                 targetProject="/Users/mac/IdeaProjects/agrManager/src/main/java"
                 type="XMLMAPPER"/>
-        <table tableName="purchase" enableCountByExample="true"
+        <table tableName="produce" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" selectByExampleQueryId="false"/>
+        <table tableName="user" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" selectByExampleQueryId="false"/>
+        <table tableName="req_des" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="false"/>
     </context>

@@ -1,6 +1,4 @@
 package com.ly.agrManader.web.management.api;
-import com.ly.agrManader.server.Interface.IpursuerBusiv;
-import com.ly.agrManader.server.Interface.IstockBusiv;
 import com.ly.agrManader.util.BaseResponse;
 import com.ly.agrManader.util.BusinessConstants;
 import com.ly.agrManader.util.BusinessException;

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class argManager {
-    @RequestMapping({"", "admin"})
+    @RequestMapping({"", "zentao"})
     public String admin() {
-        return "admin";
+        return "zentao";
     }
 
     @RequestMapping("order")

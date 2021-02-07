@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class argManager {
-    @RequestMapping({"", "zentao"})
+    @RequestMapping({"", "login"})
     public String admin() {
-        return "zentao";
+        return "login";
     }
 
-    @RequestMapping("order")
+    @RequestMapping("mean")
     public String order() {
-        return "order";
+        return "zentao";
     }
 
     @RequestMapping("food")

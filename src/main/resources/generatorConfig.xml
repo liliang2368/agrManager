@@ -52,7 +52,7 @@
         <table tableName="produce" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="false"/>
-        <table tableName="user" enableCountByExample="true"
+        <table tableName="user_ref" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" selectByExampleQueryId="false"/>
         <table tableName="req_des" enableCountByExample="true"

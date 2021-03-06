@@ -143,9 +143,7 @@
             <artifactId>pagehelper</artifactId>
             <version>5.1.10</version>
         </dependency>
-
     </dependencies>
-
 
     <build>
         <resources>

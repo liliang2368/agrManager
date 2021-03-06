@@ -21,7 +21,6 @@
                         connectionURL="jdbc:mysql://localhost:3306/qzybug?useUnicode=true&amp;characterEncoding=UTF-8"
                         userId="root" password="12345678">
         </jdbcConnection>
-
         <!-- 类型转换器 -->
         <javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
             <!--

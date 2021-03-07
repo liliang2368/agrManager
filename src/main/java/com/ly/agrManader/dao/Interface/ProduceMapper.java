@@ -10,13 +10,21 @@ public interface ProduceMapper {
 
     int deleteByExample(ProduceExample example);
 
+    int deleteByPrimaryKey(Integer produceId);
+
     int insert(Produce record);
 
     int insertSelective(Produce record);
 
     List<Produce> selectByExample(ProduceExample example);
 
+    Produce selectByPrimaryKey(Integer produceId);
+
     int updateByExampleSelective(@Param("record") Produce record, @Param("example") ProduceExample example);
 
     int updateByExample(@Param("record") Produce record, @Param("example") ProduceExample example);
+
+    int updateByPrimaryKeySelective(Produce record);
+
+    int updateByPrimaryKey(Produce record);
 }

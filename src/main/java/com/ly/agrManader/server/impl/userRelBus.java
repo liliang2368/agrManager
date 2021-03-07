@@ -18,6 +18,8 @@ public class userRelBus implements userRelBusisv {
     @Autowired
     private UserRefMapper userRefMapper;
 
+
+
     @Override
     public BaseResponse<UserRef> login(UserRequest userRequest) {
         BaseResponse<UserRef> response = new BaseResponse<UserRef>(true, BusinessConstants.BUSI_SUCCESS_CODE,BusinessConstants.BUSI_SUCCESS_MESSAGE);
@@ -26,8 +28,12 @@ public class userRelBus implements userRelBusisv {
         //输入用户和密码
         criteria.andPasswordEqualTo(userRequest.getPassWord());
         criteria.andUsernameEqualTo(userRequest.getUserName());
-        List<UserRef> userRef=userRefMapper.selectByExample(example);
-        response.setResult(userRef.get(0));
+        List<UserRef> userRef1=userRefMapper.selectByExample(example);
+       if(userRef1.size()==0)
+       {
+           response.setSuccess(false);
+       }
+      //  response.setResult(userRef.get(0));
         return response;
     }
 }

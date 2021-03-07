@@ -10,13 +10,21 @@ public interface ReqDesMapper {
 
     int deleteByExample(ReqDesExample example);
 
+    int deleteByPrimaryKey(Integer desId);
+
     int insert(ReqDes record);
 
     int insertSelective(ReqDes record);
 
     List<ReqDes> selectByExample(ReqDesExample example);
 
+    ReqDes selectByPrimaryKey(Integer desId);
+
     int updateByExampleSelective(@Param("record") ReqDes record, @Param("example") ReqDesExample example);
 
     int updateByExample(@Param("record") ReqDes record, @Param("example") ReqDesExample example);
+
+    int updateByPrimaryKeySelective(ReqDes record);
+
+    int updateByPrimaryKey(ReqDes record);
 }

@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserRefMapper {
-
     long countByExample(UserRefExample example);
 
     int deleteByExample(UserRefExample example);

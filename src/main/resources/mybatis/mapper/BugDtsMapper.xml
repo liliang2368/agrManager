@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.agrManader.dao.Interface.BugDtsMapper">
+  <resultMap id="BaseResultMap" type="com.ly.agrManader.dao.bo.BugDts">
+    <id column="bug_id" jdbcType="VARCHAR" property="bugId" />
+    <result column="create_name" jdbcType="VARCHAR" property="createName" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+    <result column="update_time" jdbcType="VARCHAR" property="updateTime" />
+    <result column="bug_name" jdbcType="VARCHAR" property="bugName" />
+    <result column="bug_describe" jdbcType="VARCHAR" property="bugDescribe" />
+    <result column="bug_state" jdbcType="BIT" property="bugState" />
+    <result column="bug_owner" jdbcType="VARCHAR" property="bugOwner" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    bug_id, create_name, create_time, update_time, bug_name, bug_describe, bug_state, 
+    bug_owner
+  </sql>
+  <select id="selectByExample" parameterType="com.ly.agrManader.dao.bo.BugDtsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from bug_dts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bug_dts
+    where bug_id = #{bugId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from bug_dts
+    where bug_id = #{bugId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.BugDtsExample">
+    delete from bug_dts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ly.agrManader.dao.bo.BugDts">
+    insert into bug_dts (bug_id, create_name, create_time, 
+      update_time, bug_name, bug_describe, 
+      bug_state, bug_owner)
+    values (#{bugId,jdbcType=VARCHAR}, #{createName,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{bugName,jdbcType=VARCHAR}, #{bugDescribe,jdbcType=VARCHAR}, 
+      #{bugState,jdbcType=BIT}, #{bugOwner,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.BugDts">
+    insert into bug_dts
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bugId != null">
+        bug_id,
+      </if>
+      <if test="createName != null">
+        create_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="bugName != null">
+        bug_name,
+      </if>
+      <if test="bugDescribe != null">
+        bug_describe,
+      </if>
+      <if test="bugState != null">
+        bug_state,
+      </if>
+      <if test="bugOwner != null">
+        bug_owner,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bugId != null">
+        #{bugId,jdbcType=VARCHAR},
+      </if>
+      <if test="createName != null">
+        #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="bugName != null">
+        #{bugName,jdbcType=VARCHAR},
+      </if>
+      <if test="bugDescribe != null">
+        #{bugDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="bugState != null">
+        #{bugState,jdbcType=BIT},
+      </if>
+      <if test="bugOwner != null">
+        #{bugOwner,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.BugDtsExample" resultType="java.lang.Long">
+    select count(*) from bug_dts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bug_dts
+    <set>
+      <if test="record.bugId != null">
+        bug_id = #{record.bugId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createName != null">
+        create_name = #{record.createName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bugName != null">
+        bug_name = #{record.bugName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bugDescribe != null">
+        bug_describe = #{record.bugDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bugState != null">
+        bug_state = #{record.bugState,jdbcType=BIT},
+      </if>
+      <if test="record.bugOwner != null">
+        bug_owner = #{record.bugOwner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bug_dts
+    set bug_id = #{record.bugId,jdbcType=VARCHAR},
+      create_name = #{record.createName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=VARCHAR},
+      bug_name = #{record.bugName,jdbcType=VARCHAR},
+      bug_describe = #{record.bugDescribe,jdbcType=VARCHAR},
+      bug_state = #{record.bugState,jdbcType=BIT},
+      bug_owner = #{record.bugOwner,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.BugDts">
+    update bug_dts
+    <set>
+      <if test="createName != null">
+        create_name = #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="bugName != null">
+        bug_name = #{bugName,jdbcType=VARCHAR},
+      </if>
+      <if test="bugDescribe != null">
+        bug_describe = #{bugDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="bugState != null">
+        bug_state = #{bugState,jdbcType=BIT},
+      </if>
+      <if test="bugOwner != null">
+        bug_owner = #{bugOwner,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bug_id = #{bugId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.BugDts">
+    update bug_dts
+    set create_name = #{createName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=VARCHAR},
+      bug_name = #{bugName,jdbcType=VARCHAR},
+      bug_describe = #{bugDescribe,jdbcType=VARCHAR},
+      bug_state = #{bugState,jdbcType=BIT},
+      bug_owner = #{bugOwner,jdbcType=VARCHAR}
+    where bug_id = #{bugId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -18,8 +18,6 @@ public class userRelBus implements userRelBusisv {
     @Autowired
     private UserRefMapper userRefMapper;
 
-
-
     @Override
     public BaseResponse<UserRef> login(UserRequest userRequest) {
         BaseResponse<UserRef> response = new BaseResponse<UserRef>(true, BusinessConstants.BUSI_SUCCESS_CODE,BusinessConstants.BUSI_SUCCESS_MESSAGE);

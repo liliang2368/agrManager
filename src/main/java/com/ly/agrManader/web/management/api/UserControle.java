@@ -12,16 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @Api(value="用户模块",tags= {"登陆","控制层"})
 public class UserControle {
 
     @Autowired
     private userRelBusisv userRelBusisc;
-
-
 
     @ApiOperation(value = "模拟用户登陆", httpMethod = "POST", consumes = "application/json")
     @ApiResponse(code = 200, message = "success", response = String.class)
@@ -34,9 +30,6 @@ public class UserControle {
         }catch (Exception e){
 
         }
-
-
-
         return response;
     }
 

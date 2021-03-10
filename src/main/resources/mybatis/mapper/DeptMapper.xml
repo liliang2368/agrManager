@@ -75,7 +75,7 @@
     </if>
     'false' as QUERYID,
     <include refid="Base_Column_List" />
-    from Dept
+    from dept
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,27 +86,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from Dept
+    from dept
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from Dept
+    delete from dept
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.ly.agrManader.dao.bo.DeptExample">
-    delete from Dept
+    delete from dept
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.ly.agrManader.dao.bo.Dept">
-    insert into Dept (id, dept_id, dept_name, 
+    insert into dept (id, dept_id, dept_name, 
       dept_owner)
     values (#{id,jdbcType=INTEGER}, #{deptId,jdbcType=INTEGER}, #{deptName,jdbcType=VARCHAR}, 
       #{deptOwner,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ly.agrManader.dao.bo.Dept">
-    insert into Dept
+    insert into dept
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -137,13 +137,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.ly.agrManader.dao.bo.DeptExample" resultType="java.lang.Long">
-    select count(*) from Dept
+    select count(*) from dept
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update Dept
+    update dept
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -163,7 +163,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update Dept
+    update dept
     set id = #{record.id,jdbcType=INTEGER},
       dept_id = #{record.deptId,jdbcType=INTEGER},
       dept_name = #{record.deptName,jdbcType=VARCHAR},
@@ -173,7 +173,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.ly.agrManader.dao.bo.Dept">
-    update Dept
+    update dept
     <set>
       <if test="deptId != null">
         dept_id = #{deptId,jdbcType=INTEGER},
@@ -188,7 +188,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ly.agrManader.dao.bo.Dept">
-    update Dept
+    update dept
     set dept_id = #{deptId,jdbcType=INTEGER},
       dept_name = #{deptName,jdbcType=VARCHAR},
       dept_owner = #{deptOwner,jdbcType=VARCHAR}
